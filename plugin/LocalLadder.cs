@@ -133,6 +133,9 @@ internal static class LocalLadder
         if (!nativeFinished && Time.realtimeSinceStartup - scenarioDoneAt < 20) return;
         try
         {
+            // Dungeon receipt first. If its checkpoint cannot be committed, keep the
+            // debug-scenario Pending for the existing retry path instead of losing the run.
+            DungeonMenu.BattleSettled(active.Id, terminalOutcome ?? "Lost", conceded);
             profile.Settle(active.Id, terminalOutcome ?? "Lost", terminalTurns, conceded, terminalFacts, active.NpcRating);
             Debug.Log("DEBUG_SCENARIO finished match=" + active.Id + " result=" + terminalOutcome + " (no progression)");
             RewardPresentationComplete();
@@ -165,6 +168,61 @@ internal static class LocalLadder
 
     internal static void StartSelected(string selected, LocalDeck resolved) => StartSelected(selected, resolved,
         selected != null && selected.StartsWith("custom:", StringComparison.Ordinal));
+
+    // Dungeon encounters borrow the native match presentation, NOT the ranked economy.
+    // The debug-scenario settlement gate drops the temporary profile Pending without a
+    // ladder receipt, pack, gold, achievement, class XP or side effect on the collection.
+    internal static bool StartDungeonBattle(SoloStone.Roguelike.DungeonRun run, LocalDeck opponent)
+    {
+        if (run == null || opponent == null || run.Step != SoloStone.Roguelike.RunStep.Battle ||
+            run.AttemptId != null || profile == null || profile.Pending != null ||
+            screen == "Starting" || screen == "Playing")
+            throw new InvalidOperationException("The dungeon battle cannot begin now.");
+        var starter = LocalDecks.All.FirstOrDefault(deck => deck.Hero == run.Hero);
+        if (starter == null) throw new InvalidOperationException("No starter hero matches this dungeon run.");
+        // A run deck is an unowned, temporary snapshot; it never becomes a custom collection deck.
+        var dungeonDeck = LocalDeck.ForDungeon(run.Hero, run.Deck);
+        int seed = unchecked((run.Seed ^ ((run.ActiveRoom + 1) * 100003)) & int.MaxValue);
+        var room = run.Rooms.Single(node => node.Id == run.ActiveRoom);
+        int act = room.Floor / SoloStone.Roguelike.DungeonRules.FloorsPerAct;
+        int baseStars = act == 0 ? 25 : act == 1 ? 75 : 110;
+        int skillStars = Math.Min(150, baseStars + (room.Kind == SoloStone.Roguelike.RoomKind.Boss ? 40
+            : room.Kind == SoloStone.Roguelike.RoomKind.Elite ? 22 : 0));
+        var prepared = ClientBridge.PrepareLocalMatch(starter.Id, opponent.Id, seed, skillStars, dungeonDeck,
+            dungeon: true);
+        try
+        {
+            profile.ArmDebugScenario();
+            profile.BeginLaunch(starter.Id, opponent.Id, seed, record =>
+            {
+                // Record first: a crash after native stage cannot leave a dungeon win unbound.
+                DungeonMenu.RegisterBattle(record.Id);
+                try
+                {
+                    ClientBridge.StartLocalMatch(record, prepared);
+                    active = record;
+                    result = null;
+                    terminalFacts = null;
+                    terminalPetXp = null;
+                    terminalAchievementEvidence = null;
+                    terminalOutcome = null;
+                    conceded = false;
+                    nativeFinished = false;
+                    error = null;
+                    opponentLabel = opponent.Opponent;
+                    screen = "Starting";
+                }
+                catch
+                {
+                    DungeonMenu.CancelBattle(record.Id);
+                    throw;
+                }
+            });
+        }
+        finally { profile.DisarmDebugScenario(); }
+        return true;
+    }
+
 
     // casual: Standard Casual (#37): a Casual NPC queue and no ladder accounting (LocalMatchRecord.Mode).
     // rematch (#28) is Ranked-only: it replays a Ranked match against the ladder gate, so rematch with casual refuses the start.

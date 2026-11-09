@@ -386,6 +386,7 @@ public sealed class OfflineProbe : BaseUnityPlugin
         NativeProfileSelector.Update();
         stage = DeckExperience.TraceStage("profile-selector", stage);
         ClientBridge.Update();
+        DungeonMenu.Tick();
         stage = DeckExperience.TraceStage("client-bridge", stage);
         NativeTestControl.Update();
         stage = DeckExperience.TraceStage("test-control", stage);
@@ -431,7 +432,7 @@ public sealed class OfflineProbe : BaseUnityPlugin
         }
     }
 
-    private void OnGUI() { LocalLadder.Draw(); NativeBrandLabel.Draw(); NativeFpsCounter.Draw(); }
+    private void OnGUI() { LocalLadder.Draw(); NativeBrandLabel.Draw(); NativeFpsCounter.Draw(); DungeonMenu.Draw(); }
     private void OnApplicationPause(bool paused)
     {
         NativeSpellWatchdog.ApplicationPause(paused);

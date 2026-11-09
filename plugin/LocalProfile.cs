@@ -492,6 +492,8 @@ public sealed partial class LocalProfile : IDisposable
     private const int MaximumTurns = 1000000;
     private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(LocalProfileData));
     private readonly string path;
+    // Used only to keep roguelike-run.xml beside this save; it is not a profile ledger field.
+    internal string DungeonProfilePath => path;
     private readonly FileStream lease;
     private readonly bool backups;
     private readonly ProfileOptions profileOptions;

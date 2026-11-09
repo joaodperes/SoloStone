@@ -33,6 +33,9 @@ You need Windows 10 or 11 (64-bit), Hearthstone installed through Battle.net, an
 
 Something went wrong? Tell us on [Discord](https://discord.gg/e45QgKHmC2). The full guide is in [INSTALL.md](docs/INSTALL.md).
 
+> [!NOTE]
+> **Experimental fork feature (development branch only):** The Deep Delve adds a branching single-player roguelike dungeon with card buckets, events and treasure rooms. See [ROGUELIKE.md](docs/ROGUELIKE.md). This feature is not part of the released upstream 0.1.0 installer and requires native-client validation.
+
 ## What it is
 
 - **A mod for a separate copy of your game.** SoloStone copies the Hearthstone you already have, adds its own files

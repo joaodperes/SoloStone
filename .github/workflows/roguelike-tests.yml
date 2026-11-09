@@ -1,0 +1,25 @@
+name: Dungeon run rules
+on:
+  push:
+    branches: [main, "dev/**"]
+    paths:
+      - "plugin/Roguelike/DungeonRunCore.cs"
+      - "installer/SoloStone.Launcher.Tests/RoguelikeTests.cs"
+      - "tools/roguelike-tests/**"
+      - ".github/workflows/roguelike-tests.yml"
+  pull_request:
+    paths:
+      - "plugin/Roguelike/DungeonRunCore.cs"
+      - "installer/SoloStone.Launcher.Tests/RoguelikeTests.cs"
+      - "tools/roguelike-tests/**"
+      - ".github/workflows/roguelike-tests.yml"
+jobs:
+  rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.402"
+      - name: Test deterministic dungeon rules
+        run: dotnet run --project tools/roguelike-tests/Roguelike.Tests.csproj -c Release

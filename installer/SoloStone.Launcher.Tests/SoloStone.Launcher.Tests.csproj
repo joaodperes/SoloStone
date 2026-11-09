@@ -51,6 +51,7 @@
     <Compile Include="../../plugin/ClientBindings.cs" Link="ClientBindings.cs" />
     <Compile Include="../../plugin/ProfileCatalog.cs" Link="ProfileCatalog.cs" />
     <Compile Include="../../plugin/GrindTiers.cs" Link="GrindTiers.cs" />
+    <Compile Include="../../plugin/Roguelike/DungeonRunCore.cs" Link="DungeonRunCore.cs" />
     <Compile Include="../../plugin/LadderRules.cs" Link="LadderRules.cs" />
   </ItemGroup>
 </Project>
