@@ -1,0 +1,2809 @@
+{
+  "schemaVersion": 1,
+  "title": "The Deep Delve",
+  "acts": [
+    "The Candlelit Tunnels",
+    "The Deep Warrens",
+    "The Forgotten Vault"
+  ],
+  "encounters": [
+    {
+      "id": "npc-pure-paladin",
+      "title": "Pure Aura Paladin",
+      "deckId": "npc-pure-paladin",
+      "hero": "HERO_04",
+      "act": 2,
+      "archetype": "midrange",
+      "tier": 2
+    },
+    {
+      "id": "npc-zee-shaman",
+      "title": "Zee Shaman",
+      "deckId": "npc-zee-shaman",
+      "hero": "HERO_02",
+      "act": 2,
+      "archetype": "tempo",
+      "tier": 2
+    },
+    {
+      "id": "npc-dragon-warrior",
+      "title": "Dragon Warrior",
+      "deckId": "npc-dragon-warrior",
+      "hero": "HERO_01",
+      "act": 2,
+      "archetype": "tempo",
+      "tier": 2
+    },
+    {
+      "id": "npc-recipe-herald-death-knight",
+      "title": "Herald Death Knight",
+      "deckId": "npc-recipe-herald-death-knight",
+      "hero": "HERO_11",
+      "act": 2,
+      "archetype": "midrange",
+      "tier": 2
+    },
+    {
+      "id": "npc-recipe-deathrattle-herald-demon-hunter",
+      "title": "Deathrattle Herald Demon Hunter",
+      "deckId": "npc-recipe-deathrattle-herald-demon-hunter",
+      "hero": "HERO_10",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 4
+    },
+    {
+      "id": "npc-recipe-void-demon-hunter",
+      "title": "Void Demon Hunter",
+      "deckId": "npc-recipe-void-demon-hunter",
+      "hero": "HERO_10",
+      "act": 3,
+      "archetype": "tempo",
+      "tier": 3
+    },
+    {
+      "id": "npc-recipe-attack-druid",
+      "title": "Attack Druid",
+      "deckId": "npc-recipe-attack-druid",
+      "hero": "HERO_06",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 4
+    },
+    {
+      "id": "npc-recipe-merithra-druid",
+      "title": "Merithra Druid",
+      "deckId": "npc-recipe-merithra-druid",
+      "hero": "HERO_06",
+      "act": 3,
+      "archetype": "control",
+      "tier": 5
+    },
+    {
+      "id": "npc-recipe-dragon-hunter",
+      "title": "Dragon Hunter",
+      "deckId": "npc-recipe-dragon-hunter",
+      "hero": "HERO_05",
+      "act": 2,
+      "archetype": "midrange",
+      "tier": 2
+    },
+    {
+      "id": "npc-recipe-tripwire-hunter",
+      "title": "Tripwire Hunter",
+      "deckId": "npc-recipe-tripwire-hunter",
+      "hero": "HERO_05",
+      "act": 3,
+      "archetype": "aggro",
+      "tier": 4
+    },
+    {
+      "id": "npc-recipe-burn-mage",
+      "title": "Burn Mage",
+      "deckId": "npc-recipe-burn-mage",
+      "hero": "HERO_08",
+      "act": 3,
+      "archetype": "aggro",
+      "tier": 3
+    },
+    {
+      "id": "npc-recipe-manastorm-mage",
+      "title": "Manastorm Mage",
+      "deckId": "npc-recipe-manastorm-mage",
+      "hero": "HERO_08",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 4
+    },
+    {
+      "id": "npc-recipe-infinity-paladin",
+      "title": "Infinity Paladin",
+      "deckId": "npc-recipe-infinity-paladin",
+      "hero": "HERO_04",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 5
+    },
+    {
+      "id": "npc-recipe-equilibrium-quest-priest",
+      "title": "Equilibrium Quest Priest",
+      "deckId": "npc-recipe-equilibrium-quest-priest",
+      "hero": "HERO_09",
+      "act": 3,
+      "archetype": "control",
+      "tier": 4
+    },
+    {
+      "id": "npc-recipe-medivh-imbue-priest",
+      "title": "Medivh Imbue Priest",
+      "deckId": "npc-recipe-medivh-imbue-priest",
+      "hero": "HERO_09",
+      "act": 1,
+      "archetype": "control",
+      "tier": 1
+    },
+    {
+      "id": "npc-recipe-aya-coin-rogue",
+      "title": "Aya Coin Rogue",
+      "deckId": "npc-recipe-aya-coin-rogue",
+      "hero": "HERO_03",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 5
+    },
+    {
+      "id": "npc-recipe-sneaky-herald-rogue",
+      "title": "Sneaky Herald Rogue",
+      "deckId": "npc-recipe-sneaky-herald-rogue",
+      "hero": "HERO_03",
+      "act": 3,
+      "archetype": "tempo",
+      "tier": 3
+    },
+    {
+      "id": "npc-recipe-mug-shaman",
+      "title": "Mug Shaman",
+      "deckId": "npc-recipe-mug-shaman",
+      "hero": "HERO_02",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 3
+    },
+    {
+      "id": "npc-recipe-zee-herald-shaman",
+      "title": "Zee Herald Shaman",
+      "deckId": "npc-recipe-zee-herald-shaman",
+      "hero": "HERO_02",
+      "act": 2,
+      "archetype": "tempo",
+      "tier": 2
+    },
+    {
+      "id": "npc-recipe-herald-warlock",
+      "title": "Herald Warlock",
+      "deckId": "npc-recipe-herald-warlock",
+      "hero": "HERO_07",
+      "act": 3,
+      "archetype": "control",
+      "tier": 4
+    },
+    {
+      "id": "npc-recipe-rafaam-warlock",
+      "title": "Timethief Rafaam",
+      "deckId": "npc-recipe-rafaam-warlock",
+      "hero": "HERO_07",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 3
+    },
+    {
+      "id": "npc-recipe-cannon-pirate-warrior",
+      "title": "Cannon Pirate Warrior",
+      "deckId": "npc-recipe-cannon-pirate-warrior",
+      "hero": "HERO_01",
+      "act": 1,
+      "archetype": "aggro",
+      "tier": 1
+    },
+    {
+      "id": "npc-unholy-death-knight",
+      "title": "Unholy Death Knight",
+      "deckId": "npc-unholy-death-knight",
+      "hero": "HERO_11",
+      "act": 3,
+      "archetype": "aggro",
+      "tier": 5
+    },
+    {
+      "id": "npc-void-soul-demon-hunter",
+      "title": "Void Soul Demon Hunter",
+      "deckId": "npc-void-soul-demon-hunter",
+      "hero": "HERO_10",
+      "act": 1,
+      "archetype": "tempo",
+      "tier": 1
+    },
+    {
+      "id": "npc-chef-druid",
+      "title": "Chef Druid",
+      "deckId": "npc-chef-druid",
+      "hero": "HERO_06",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 3
+    },
+    {
+      "id": "npc-token-druid",
+      "title": "Token Druid",
+      "deckId": "npc-token-druid",
+      "hero": "HERO_06",
+      "act": 3,
+      "archetype": "aggro",
+      "tier": 4
+    },
+    {
+      "id": "npc-companion-hunter",
+      "title": "Companion Hunter",
+      "deckId": "npc-companion-hunter",
+      "hero": "HERO_05",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 3
+    },
+    {
+      "id": "npc-elemental-mage",
+      "title": "Elemental Mage",
+      "deckId": "npc-elemental-mage",
+      "hero": "HERO_08",
+      "act": 3,
+      "archetype": "tempo",
+      "tier": 3
+    },
+    {
+      "id": "npc-two-bit-rogue",
+      "title": "Two-Bit Rogue",
+      "deckId": "npc-two-bit-rogue",
+      "hero": "HERO_03",
+      "act": 3,
+      "archetype": "tempo",
+      "tier": 3
+    },
+    {
+      "id": "npc-death-knight-aggro",
+      "title": "Raptor Corpse Aggro",
+      "deckId": "npc-death-knight-aggro",
+      "hero": "HERO_11",
+      "act": 3,
+      "archetype": "aggro",
+      "tier": 3
+    },
+    {
+      "id": "npc-death-knight-bwonsamdi",
+      "title": "Bwonsamdi Deathrattle DK",
+      "deckId": "npc-death-knight-bwonsamdi",
+      "hero": "HERO_11",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 3
+    },
+    {
+      "id": "npc-death-knight-thalena",
+      "title": "Thal'ena Corpse Value DK",
+      "deckId": "npc-death-knight-thalena",
+      "hero": "HERO_11",
+      "act": 2,
+      "archetype": "midrange",
+      "tier": 2
+    },
+    {
+      "id": "npc-demon-hunter-quest",
+      "title": "Colossus Quest Demon Hunter",
+      "deckId": "npc-demon-hunter-quest",
+      "hero": "HERO_10",
+      "act": 3,
+      "archetype": "aggro",
+      "tier": 3
+    },
+    {
+      "id": "npc-demon-hunter-raza",
+      "title": "Broxigar Raza Demon Hunter",
+      "deckId": "npc-demon-hunter-raza",
+      "hero": "HERO_10",
+      "act": 2,
+      "archetype": "tempo",
+      "tier": 2
+    },
+    {
+      "id": "npc-druid-azshara",
+      "title": "Azshara Ramp Druid",
+      "deckId": "npc-druid-azshara",
+      "hero": "HERO_06",
+      "act": 2,
+      "archetype": "control",
+      "tier": 2
+    },
+    {
+      "id": "npc-hunter-face",
+      "title": "Tripwire Face Hunter",
+      "deckId": "npc-hunter-face",
+      "hero": "HERO_05",
+      "act": 3,
+      "archetype": "aggro",
+      "tier": 4
+    },
+    {
+      "id": "npc-hunter-magmaw",
+      "title": "Colossal Magmaw Hunter",
+      "deckId": "npc-hunter-magmaw",
+      "hero": "HERO_05",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 4
+    },
+    {
+      "id": "npc-hunter-quest",
+      "title": "Food Chain Quest Hunter",
+      "deckId": "npc-hunter-quest",
+      "hero": "HERO_05",
+      "act": 3,
+      "archetype": "tempo",
+      "tier": 3
+    },
+    {
+      "id": "npc-mage-imbue",
+      "title": "Titanographer Imbue Mage",
+      "deckId": "npc-mage-imbue",
+      "hero": "HERO_08",
+      "act": 3,
+      "archetype": "tempo",
+      "tier": 4
+    },
+    {
+      "id": "npc-mage-leyline",
+      "title": "Leyline Spell Mage",
+      "deckId": "npc-mage-leyline",
+      "hero": "HERO_08",
+      "act": 2,
+      "archetype": "tempo",
+      "tier": 2
+    },
+    {
+      "id": "npc-mage-quest",
+      "title": "Forbidden Sequence Quest Mage",
+      "deckId": "npc-mage-quest",
+      "hero": "HERO_08",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 3
+    },
+    {
+      "id": "npc-paladin-egg",
+      "title": "Khelos Egg Paladin",
+      "deckId": "npc-paladin-egg",
+      "hero": "HERO_04",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 3
+    },
+    {
+      "id": "npc-priest-egg",
+      "title": "Khelos Egg Priest",
+      "deckId": "npc-priest-egg",
+      "hero": "HERO_09",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 3
+    },
+    {
+      "id": "npc-priest-reborn",
+      "title": "Raith Reborn Priest",
+      "deckId": "npc-priest-reborn",
+      "hero": "HERO_09",
+      "act": 2,
+      "archetype": "control",
+      "tier": 2
+    },
+    {
+      "id": "npc-rogue-burn",
+      "title": "Fan of Knives Burn Rogue",
+      "deckId": "npc-rogue-burn",
+      "hero": "HERO_03",
+      "act": 2,
+      "archetype": "aggro",
+      "tier": 2
+    },
+    {
+      "id": "npc-rogue-mill",
+      "title": "Ysera Fatigue Rogue",
+      "deckId": "npc-rogue-mill",
+      "hero": "HERO_03",
+      "act": 3,
+      "archetype": "control",
+      "tier": 3
+    },
+    {
+      "id": "npc-rogue-quest",
+      "title": "Lie in Wait Quest Rogue",
+      "deckId": "npc-rogue-quest",
+      "hero": "HERO_03",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 4
+    },
+    {
+      "id": "npc-shaman-herald",
+      "title": "Muradin Herald Shaman",
+      "deckId": "npc-shaman-herald",
+      "hero": "HERO_02",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 3
+    },
+    {
+      "id": "npc-shaman-masochist",
+      "title": "Muradin Masochist Shaman",
+      "deckId": "npc-shaman-masochist",
+      "hero": "HERO_02",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 3
+    },
+    {
+      "id": "npc-warlock-godfrey",
+      "title": "Godfrey Overdraw Warlock",
+      "deckId": "npc-warlock-godfrey",
+      "hero": "HERO_07",
+      "act": 3,
+      "archetype": "control",
+      "tier": 3
+    },
+    {
+      "id": "npc-warlock-pig",
+      "title": "Agamaggan Pig Warlock",
+      "deckId": "npc-warlock-pig",
+      "hero": "HERO_07",
+      "act": 2,
+      "archetype": "midrange",
+      "tier": 2
+    },
+    {
+      "id": "npc-warlock-wallow",
+      "title": "Wallow Dark Gift Warlock",
+      "deckId": "npc-warlock-wallow",
+      "hero": "HERO_07",
+      "act": 3,
+      "archetype": "control",
+      "tier": 4
+    },
+    {
+      "id": "npc-warrior-egg",
+      "title": "Khelos Egg Warrior",
+      "deckId": "npc-warrior-egg",
+      "hero": "HERO_01",
+      "act": 3,
+      "archetype": "combo",
+      "tier": 3
+    },
+    {
+      "id": "npc-warrior-logosh",
+      "title": "Blood Fighter Lo'Gosh Warrior",
+      "deckId": "npc-warrior-logosh",
+      "hero": "HERO_01",
+      "act": 3,
+      "archetype": "midrange",
+      "tier": 3
+    },
+    {
+      "id": "npc-warrior-quest",
+      "title": "Survive Quest Warrior",
+      "deckId": "npc-warrior-quest",
+      "hero": "HERO_01",
+      "act": 3,
+      "archetype": "control",
+      "tier": 4
+    }
+  ],
+  "events": [
+    {
+      "id": "altar",
+      "title": "The Whispering Altar",
+      "text": "An inscription demands a sacrifice. Dare you touch it?",
+      "choices": [
+        {
+          "title": "Take the offering",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Make a sacrifice",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "lost-kobold",
+      "title": "Lost Candlebearer",
+      "text": "A frightened kobold needs directions.",
+      "choices": [
+        {
+          "title": "Help and receive thanks",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Scare it away",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "shimmering-door",
+      "title": "The Shimmering Door",
+      "text": "Something sparkles behind an impossibly narrow door.",
+      "choices": [
+        {
+          "title": "Take the safe path",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Squeeze through",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "forgotten-library",
+      "title": "Forgotten Library",
+      "text": "Pages float in a draft from the lower chambers.",
+      "choices": [
+        {
+          "title": "Sell the maps",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Study forbidden notes",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "unstable-bridge",
+      "title": "The Broken Bridge",
+      "text": "A rope bridge swings above an endless pit.",
+      "choices": [
+        {
+          "title": "Collect dropped coins",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Risk the short way",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "tinkers-workshop",
+      "title": "Tinker's Workshop",
+      "text": "A mechanical kobold offers an adjustment.",
+      "choices": [
+        {
+          "title": "Trade your scraps",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Test the machine",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "cursed-fountain",
+      "title": "The Cursed Fountain",
+      "text": "The water whispers in a dozen voices.",
+      "choices": [
+        {
+          "title": "Search the banks",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Drink from the spring",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "hidden-camp",
+      "title": "Hidden Camp",
+      "text": "A deserted fire crackles with blue flame.",
+      "choices": [
+        {
+          "title": "Search abandoned packs",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Follow the smoke",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "living-statue",
+      "title": "The Living Statue",
+      "text": "The statue moves whenever you blink.",
+      "choices": [
+        {
+          "title": "Collect the tribute",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Read its challenge",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "ghost-market",
+      "title": "The Ghost Market",
+      "text": "Wandering spirits haggle over lost memories.",
+      "choices": [
+        {
+          "title": "Trade the keepsakes",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Roll the bone dice",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "hall-of-echoes",
+      "title": "Hall of Echoes",
+      "text": "Footsteps from your future ring through the passage.",
+      "choices": [
+        {
+          "title": "Collect scattered gold",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Trust the strange whispers",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "treasure-hunter",
+      "title": "The Treasure Hunter",
+      "text": "A rival explorer is trapped beneath rubble.",
+      "choices": [
+        {
+          "title": "Take the bounty",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Ask for a secret",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "fungal-grove",
+      "title": "Glowing Fungus",
+      "text": "Luminous mushrooms have overrun the tunnels.",
+      "choices": [
+        {
+          "title": "Harvest the spores",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Breathe the enchanted air",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "ancient-anvil",
+      "title": "Ancient Anvil",
+      "text": "The anvil can reshape the plans of a lifetime.",
+      "choices": [
+        {
+          "title": "Sell old materials",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Strike the rune",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "dragon-sleep",
+      "title": "Sleeping Dragon",
+      "text": "A mountain of scales rises and falls in sleep.",
+      "choices": [
+        {
+          "title": "Pocket a loose gem",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Approach its dreams",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    },
+    {
+      "id": "clockwork-oracle",
+      "title": "Clockwork Oracle",
+      "text": "A machine predicts your choices before you make them.",
+      "choices": [
+        {
+          "title": "Take its coins",
+          "effect": "gold:40"
+        },
+        {
+          "title": "Defy its forecast",
+          "effect": "life:-1,reroll:2"
+        }
+      ]
+    }
+  ],
+  "treasures": [
+    {
+      "id": "spare-candle",
+      "title": "Spare Candle",
+      "description": "Gain one life (up to five).",
+      "implemented": true
+    },
+    {
+      "id": "lucky-pick",
+      "title": "Lucky Pickaxe",
+      "description": "Gain two draft rerolls.",
+      "implemented": true
+    },
+    {
+      "id": "coin-purse",
+      "title": "Buried Purse",
+      "description": "Gain 75 dungeon gold.",
+      "implemented": true
+    },
+    {
+      "id": "map-fragment",
+      "title": "Map Fragment",
+      "description": "A record of your journey.",
+      "implemented": false
+    },
+    {
+      "id": "runestone",
+      "title": "Runestone",
+      "description": "A curious keepsake from the halls.",
+      "implemented": false
+    },
+    {
+      "id": "mirror-charm",
+      "title": "Mirror Charm",
+      "description": "A trophy from an impossible reflection.",
+      "implemented": false
+    },
+    {
+      "id": "dragon-scale",
+      "title": "Dragon Scale",
+      "description": "A scale warm to the touch.",
+      "implemented": false
+    },
+    {
+      "id": "goblet",
+      "title": "Forgotten Goblet",
+      "description": "An ornate goblet from the royal vault.",
+      "implemented": false
+    },
+    {
+      "id": "bone-charm",
+      "title": "Bone Charm",
+      "description": "A charm carved from an ancient relic.",
+      "implemented": false
+    },
+    {
+      "id": "sunken-coin",
+      "title": "Sunken Coin",
+      "description": "A coin engraved with a lost kingdom.",
+      "implemented": false
+    },
+    {
+      "id": "lantern",
+      "title": "Glowing Lantern",
+      "description": "A cold and steady light.",
+      "implemented": false
+    },
+    {
+      "id": "king-key",
+      "title": "King's Key",
+      "description": "A key to a sealed gate.",
+      "implemented": false
+    }
+  ],
+  "buckets": [
+    {
+      "id": "npc-pure-paladin/b0",
+      "name": "Pure Aura Paladin — Foundation",
+      "family": "HERO_04",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "CORE_ICC_038",
+        "END_011",
+        "CATA_472"
+      ]
+    },
+    {
+      "id": "npc-pure-paladin/b1",
+      "name": "Pure Aura Paladin — Momentum",
+      "family": "HERO_04",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "MEND_802",
+        "JAIL_035",
+        "JAIL_327"
+      ]
+    },
+    {
+      "id": "npc-pure-paladin/b2",
+      "name": "Pure Aura Paladin — Payoff",
+      "family": "HERO_04",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "TIME_019",
+        "CATA_474",
+        "CATA_479"
+      ]
+    },
+    {
+      "id": "npc-zee-shaman/b0",
+      "name": "Zee Shaman — Foundation",
+      "family": "HERO_02",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "CORE_WC_042",
+        "CATA_556",
+        "DINO_411"
+      ]
+    },
+    {
+      "id": "npc-zee-shaman/b1",
+      "name": "Zee Shaman — Momentum",
+      "family": "HERO_02",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "CATA_565",
+        "JAIL_802",
+        "JAIL_457"
+      ]
+    },
+    {
+      "id": "npc-zee-shaman/b2",
+      "name": "Zee Shaman — Payoff",
+      "family": "HERO_02",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "TLC_482",
+        "CATA_722",
+        "CORE_UNG_205"
+      ]
+    },
+    {
+      "id": "npc-dragon-warrior/b0",
+      "name": "Dragon Warrior — Foundation",
+      "family": "HERO_01",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "JAIL_421",
+        "JAIL_384",
+        "EDR_456"
+      ]
+    },
+    {
+      "id": "npc-dragon-warrior/b1",
+      "name": "Dragon Warrior — Momentum",
+      "family": "HERO_01",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "CATA_556",
+        "CATA_585",
+        "CAP_107"
+      ]
+    },
+    {
+      "id": "npc-dragon-warrior/b2",
+      "name": "Dragon Warrior — Payoff",
+      "family": "HERO_01",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "EDR_457",
+        "EDR_889",
+        "FIR_939"
+      ]
+    },
+    {
+      "id": "npc-recipe-herald-death-knight/b0",
+      "name": "Herald Death Knight — Foundation",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "TLC_436",
+        "CATA_156",
+        "CATA_497"
+      ]
+    },
+    {
+      "id": "npc-recipe-herald-death-knight/b1",
+      "name": "Herald Death Knight — Momentum",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "TIME_619t",
+        "CATA_155",
+        "CATA_190h"
+      ]
+    },
+    {
+      "id": "npc-recipe-herald-death-knight/b2",
+      "name": "Herald Death Knight — Payoff",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "DINO_417",
+        "CORE_RLK_066",
+        "EDR_814"
+      ]
+    },
+    {
+      "id": "npc-recipe-deathrattle-herald-demon-hunter/b0",
+      "name": "Deathrattle Herald Demon Hunter — Foundation",
+      "family": "HERO_10",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CATA_528",
+        "CATA_526",
+        "CATA_530"
+      ]
+    },
+    {
+      "id": "npc-recipe-deathrattle-herald-demon-hunter/b1",
+      "name": "Deathrattle Herald Demon Hunter — Momentum",
+      "family": "HERO_10",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CORE_BT_491",
+        "TLC_902",
+        "CATA_525"
+      ]
+    },
+    {
+      "id": "npc-recipe-deathrattle-herald-demon-hunter/b2",
+      "name": "Deathrattle Herald Demon Hunter — Payoff",
+      "family": "HERO_10",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CORE_BT_801",
+        "EDR_820",
+        "TIME_003"
+      ]
+    },
+    {
+      "id": "npc-recipe-void-demon-hunter/b0",
+      "name": "Void Demon Hunter — Foundation",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "CATA_526",
+        "EDR_840",
+        "JAIL_891"
+      ]
+    },
+    {
+      "id": "npc-recipe-void-demon-hunter/b1",
+      "name": "Void Demon Hunter — Momentum",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "JAIL_892",
+        "TIME_020",
+        "TLC_902"
+      ]
+    },
+    {
+      "id": "npc-recipe-void-demon-hunter/b2",
+      "name": "Void Demon Hunter — Payoff",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "CATA_527",
+        "CORE_BT_801",
+        "TIME_449"
+      ]
+    },
+    {
+      "id": "npc-recipe-attack-druid/b0",
+      "name": "Attack Druid — Foundation",
+      "family": "HERO_06",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "CATA_139",
+        "MEND_046",
+        "EDR_844"
+      ]
+    },
+    {
+      "id": "npc-recipe-attack-druid/b1",
+      "name": "Attack Druid — Momentum",
+      "family": "HERO_06",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "CATA_140",
+        "EDR_846",
+        "EDR_000"
+      ]
+    },
+    {
+      "id": "npc-recipe-attack-druid/b2",
+      "name": "Attack Druid — Payoff",
+      "family": "HERO_06",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "FIR_959",
+        "CORE_EX1_169",
+        "JAIL_201"
+      ]
+    },
+    {
+      "id": "npc-recipe-merithra-druid/b0",
+      "name": "Merithra Druid — Foundation",
+      "family": "HERO_06",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "EDR_270",
+        "END_007",
+        "JAIL_436"
+      ]
+    },
+    {
+      "id": "npc-recipe-merithra-druid/b1",
+      "name": "Merithra Druid — Momentum",
+      "family": "HERO_06",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "TLC_100",
+        "EDR_856",
+        "JAIL_875"
+      ]
+    },
+    {
+      "id": "npc-recipe-merithra-druid/b2",
+      "name": "Merithra Druid — Payoff",
+      "family": "HERO_06",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "FIR_907",
+        "CATA_139",
+        "MEND_046"
+      ]
+    },
+    {
+      "id": "npc-recipe-dragon-hunter/b0",
+      "name": "Dragon Hunter — Foundation",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CORE_DS1_184",
+        "JAIL_380",
+        "CATA_614"
+      ]
+    },
+    {
+      "id": "npc-recipe-dragon-hunter/b1",
+      "name": "Dragon Hunter — Momentum",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "EDR_889",
+        "JAIL_877",
+        "CATA_111"
+      ]
+    },
+    {
+      "id": "npc-recipe-dragon-hunter/b2",
+      "name": "Dragon Hunter — Payoff",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CATA_551",
+        "JAIL_881",
+        "TIME_609"
+      ]
+    },
+    {
+      "id": "npc-recipe-tripwire-hunter/b0",
+      "name": "Tripwire Hunter — Foundation",
+      "family": "HERO_05",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "TIME_606",
+        "TLC_249",
+        "CATA_557"
+      ]
+    },
+    {
+      "id": "npc-recipe-tripwire-hunter/b1",
+      "name": "Tripwire Hunter — Momentum",
+      "family": "HERO_05",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "JAIL_877",
+        "TIME_600",
+        "CATA_897"
+      ]
+    },
+    {
+      "id": "npc-recipe-tripwire-hunter/b2",
+      "name": "Tripwire Hunter — Payoff",
+      "family": "HERO_05",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "JAIL_881",
+        "TIME_609",
+        "CORE_SW_066"
+      ]
+    },
+    {
+      "id": "npc-recipe-burn-mage/b0",
+      "name": "Burn Mage — Foundation",
+      "family": "HERO_08",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "TIME_857",
+        "JAIL_321",
+        "CATA_488"
+      ]
+    },
+    {
+      "id": "npc-recipe-burn-mage/b1",
+      "name": "Burn Mage — Momentum",
+      "family": "HERO_08",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "JAIL_735",
+        "CATA_484",
+        "CATA_485"
+      ]
+    },
+    {
+      "id": "npc-recipe-burn-mage/b2",
+      "name": "Burn Mage — Payoff",
+      "family": "HERO_08",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "CORE_DRG_107",
+        "CORE_SW_108",
+        "END_022"
+      ]
+    },
+    {
+      "id": "npc-recipe-manastorm-mage/b0",
+      "name": "Manastorm Mage — Foundation",
+      "family": "HERO_08",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "TLC_334",
+        "CATA_484",
+        "CATA_485"
+      ]
+    },
+    {
+      "id": "npc-recipe-manastorm-mage/b1",
+      "name": "Manastorm Mage — Momentum",
+      "family": "HERO_08",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_SW_108",
+        "JAIL_125",
+        "JAIL_319"
+      ]
+    },
+    {
+      "id": "npc-recipe-manastorm-mage/b2",
+      "name": "Manastorm Mage — Payoff",
+      "family": "HERO_08",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "TIME_006",
+        "CORE_BAR_541",
+        "END_025"
+      ]
+    },
+    {
+      "id": "npc-recipe-infinity-paladin/b0",
+      "name": "Infinity Paladin — Foundation",
+      "family": "HERO_04",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "END_012",
+        "CORE_UNG_952",
+        "JAIL_326"
+      ]
+    },
+    {
+      "id": "npc-recipe-infinity-paladin/b1",
+      "name": "Infinity Paladin — Momentum",
+      "family": "HERO_04",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_UNG_205",
+        "CORE_BT_292",
+        "CORE_DMF_067"
+      ]
+    },
+    {
+      "id": "npc-recipe-infinity-paladin/b2",
+      "name": "Infinity Paladin — Payoff",
+      "family": "HERO_04",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_EX1_619",
+        "CORE_NEW1_018",
+        "CORE_NEW1_020"
+      ]
+    },
+    {
+      "id": "npc-recipe-equilibrium-quest-priest/b0",
+      "name": "Equilibrium Quest Priest — Foundation",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "JAIL_941",
+        "CAP_801",
+        "CAP_804"
+      ]
+    },
+    {
+      "id": "npc-recipe-equilibrium-quest-priest/b1",
+      "name": "Equilibrium Quest Priest — Momentum",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "DINO_410",
+        "CAP_805",
+        "EDR_856"
+      ]
+    },
+    {
+      "id": "npc-recipe-equilibrium-quest-priest/b2",
+      "name": "Equilibrium Quest Priest — Payoff",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "TLC_816",
+        "CATA_308",
+        "CAP_806"
+      ]
+    },
+    {
+      "id": "npc-recipe-medivh-imbue-priest/b0",
+      "name": "Medivh Imbue Priest — Foundation",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "EDR_852",
+        "EDR_449",
+        "CORE_BAR_311"
+      ]
+    },
+    {
+      "id": "npc-recipe-medivh-imbue-priest/b1",
+      "name": "Medivh Imbue Priest — Momentum",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "END_025",
+        "EDR_571",
+        "TIME_432"
+      ]
+    },
+    {
+      "id": "npc-recipe-medivh-imbue-priest/b2",
+      "name": "Medivh Imbue Priest — Payoff",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "EDR_970",
+        "CATA_216",
+        "CORE_EX1_197"
+      ]
+    },
+    {
+      "id": "npc-recipe-aya-coin-rogue/b0",
+      "name": "Aya Coin Rogue — Foundation",
+      "family": "HERO_03",
+      "archetype": "combo",
+      "weight": 4,
+      "cards": [
+        "CATA_203",
+        "CATA_785",
+        "CORE_EX1_129"
+      ]
+    },
+    {
+      "id": "npc-recipe-aya-coin-rogue/b1",
+      "name": "Aya Coin Rogue — Momentum",
+      "family": "HERO_03",
+      "archetype": "combo",
+      "weight": 4,
+      "cards": [
+        "JAIL_720",
+        "TLC_515",
+        "JAIL_503"
+      ]
+    },
+    {
+      "id": "npc-recipe-aya-coin-rogue/b2",
+      "name": "Aya Coin Rogue — Payoff",
+      "family": "HERO_03",
+      "archetype": "combo",
+      "weight": 4,
+      "cards": [
+        "TIME_875t",
+        "EDR_856",
+        "TIME_875"
+      ]
+    },
+    {
+      "id": "npc-recipe-sneaky-herald-rogue/b0",
+      "name": "Sneaky Herald Rogue — Foundation",
+      "family": "HERO_03",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "CAP_005",
+        "TIME_875",
+        "TLC_100"
+      ]
+    },
+    {
+      "id": "npc-recipe-sneaky-herald-rogue/b1",
+      "name": "Sneaky Herald Rogue — Momentum",
+      "family": "HERO_03",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "CATA_154",
+        "CATA_497",
+        "TLC_522"
+      ]
+    },
+    {
+      "id": "npc-recipe-sneaky-herald-rogue/b2",
+      "name": "Sneaky Herald Rogue — Payoff",
+      "family": "HERO_03",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "EDR_844",
+        "EDR_846",
+        "CATA_201"
+      ]
+    },
+    {
+      "id": "npc-recipe-mug-shaman/b0",
+      "name": "Mug Shaman — Foundation",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "JAIL_803",
+        "JAIL_800",
+        "JAIL_805"
+      ]
+    },
+    {
+      "id": "npc-recipe-mug-shaman/b1",
+      "name": "Mug Shaman — Momentum",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "TIME_218",
+        "CORE_GIL_836",
+        "JAIL_987"
+      ]
+    },
+    {
+      "id": "npc-recipe-mug-shaman/b2",
+      "name": "Mug Shaman — Payoff",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "TLC_464",
+        "CAP_407",
+        "CATA_561"
+      ]
+    },
+    {
+      "id": "npc-recipe-zee-herald-shaman/b0",
+      "name": "Zee Herald Shaman — Foundation",
+      "family": "HERO_02",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "JAIL_800",
+        "CATA_497",
+        "CATA_153"
+      ]
+    },
+    {
+      "id": "npc-recipe-zee-herald-shaman/b1",
+      "name": "Zee Herald Shaman — Momentum",
+      "family": "HERO_02",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "CATA_190h",
+        "CORE_GIL_531",
+        "CORE_ULD_191"
+      ]
+    },
+    {
+      "id": "npc-recipe-zee-herald-shaman/b2",
+      "name": "Zee Herald Shaman — Payoff",
+      "family": "HERO_02",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "CATA_556",
+        "CORE_UNG_809",
+        "CORE_WC_042"
+      ]
+    },
+    {
+      "id": "npc-recipe-herald-warlock/b0",
+      "name": "Herald Warlock — Foundation",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "JAIL_511",
+        "CATA_497",
+        "JAIL_510"
+      ]
+    },
+    {
+      "id": "npc-recipe-herald-warlock/b1",
+      "name": "Herald Warlock — Momentum",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "CATA_190h",
+        "JAIL_514",
+        "TLC_451"
+      ]
+    },
+    {
+      "id": "npc-recipe-herald-warlock/b2",
+      "name": "Herald Warlock — Payoff",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "CORE_UNG_205",
+        "CATA_496",
+        "CATA_725"
+      ]
+    },
+    {
+      "id": "npc-recipe-rafaam-warlock/b0",
+      "name": "Timethief Rafaam — Foundation",
+      "family": "HERO_07",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CATA_725",
+        "CORE_CS2_062",
+        "CORE_EX1_312"
+      ]
+    },
+    {
+      "id": "npc-recipe-rafaam-warlock/b1",
+      "name": "Timethief Rafaam — Momentum",
+      "family": "HERO_07",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_ICC_055",
+        "CORE_UNG_205",
+        "JAIL_399"
+      ]
+    },
+    {
+      "id": "npc-recipe-rafaam-warlock/b2",
+      "name": "Timethief Rafaam — Payoff",
+      "family": "HERO_07",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "JAIL_509",
+        "JAIL_510",
+        "JAIL_511"
+      ]
+    },
+    {
+      "id": "npc-recipe-cannon-pirate-warrior/b0",
+      "name": "Cannon Pirate Warrior — Foundation",
+      "family": "HERO_01",
+      "archetype": "aggro",
+      "weight": 5,
+      "cards": [
+        "CORE_DRG_024",
+        "CATA_585",
+        "CAP_104"
+      ]
+    },
+    {
+      "id": "npc-recipe-cannon-pirate-warrior/b1",
+      "name": "Cannon Pirate Warrior — Momentum",
+      "family": "HERO_01",
+      "archetype": "aggro",
+      "weight": 5,
+      "cards": [
+        "CAP_105",
+        "FIR_929",
+        "CATA_582"
+      ]
+    },
+    {
+      "id": "npc-recipe-cannon-pirate-warrior/b2",
+      "name": "Cannon Pirate Warrior — Payoff",
+      "family": "HERO_01",
+      "archetype": "aggro",
+      "weight": 5,
+      "cards": [
+        "FIR_939",
+        "CATA_584",
+        "CAP_103"
+      ]
+    },
+    {
+      "id": "npc-unholy-death-knight/b0",
+      "name": "Unholy Death Knight — Foundation",
+      "family": "HERO_11",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "JAIL_850",
+        "RLK_708",
+        "TLC_443"
+      ]
+    },
+    {
+      "id": "npc-unholy-death-knight/b1",
+      "name": "Unholy Death Knight — Momentum",
+      "family": "HERO_11",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "RLK_707",
+        "JAIL_440",
+        "TLC_436"
+      ]
+    },
+    {
+      "id": "npc-unholy-death-knight/b2",
+      "name": "Unholy Death Knight — Payoff",
+      "family": "HERO_11",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "JAIL_444",
+        "CATA_471",
+        "END_004"
+      ]
+    },
+    {
+      "id": "npc-void-soul-demon-hunter/b0",
+      "name": "Void Soul Demon Hunter — Foundation",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "EDR_820",
+        "DINO_136",
+        "JAIL_719"
+      ]
+    },
+    {
+      "id": "npc-void-soul-demon-hunter/b1",
+      "name": "Void Soul Demon Hunter — Momentum",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "CORE_BT_187",
+        "JAIL_730",
+        "CORE_UNG_205"
+      ]
+    },
+    {
+      "id": "npc-void-soul-demon-hunter/b2",
+      "name": "Void Soul Demon Hunter — Payoff",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "CORE_YOP_001",
+        "CATA_528",
+        "TLC_249"
+      ]
+    },
+    {
+      "id": "npc-chef-druid/b0",
+      "name": "Chef Druid — Foundation",
+      "family": "HERO_06",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "CORE_UNG_205",
+        "Core_LOE_115",
+        "JAIL_202"
+      ]
+    },
+    {
+      "id": "npc-chef-druid/b1",
+      "name": "Chef Druid — Momentum",
+      "family": "HERO_06",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "TIME_701",
+        "CORE_SCH_713",
+        "TIME_702"
+      ]
+    },
+    {
+      "id": "npc-chef-druid/b2",
+      "name": "Chef Druid — Payoff",
+      "family": "HERO_06",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "EDR_270",
+        "CATA_135",
+        "END_007"
+      ]
+    },
+    {
+      "id": "npc-token-druid/b0",
+      "name": "Token Druid — Foundation",
+      "family": "HERO_06",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "CATA_138",
+        "TLC_233",
+        "FIR_906"
+      ]
+    },
+    {
+      "id": "npc-token-druid/b1",
+      "name": "Token Druid — Momentum",
+      "family": "HERO_06",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "EDR_856",
+        "DINO_432",
+        "FIR_907"
+      ]
+    },
+    {
+      "id": "npc-token-druid/b2",
+      "name": "Token Druid — Payoff",
+      "family": "HERO_06",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "CATA_139",
+        "MEND_046",
+        "JAIL_407"
+      ]
+    },
+    {
+      "id": "npc-companion-hunter/b0",
+      "name": "Companion Hunter — Foundation",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "JAIL_030",
+        "MEND_303",
+        "CATA_557"
+      ]
+    },
+    {
+      "id": "npc-companion-hunter/b1",
+      "name": "Companion Hunter — Momentum",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "JAIL_877",
+        "TIME_609",
+        "TLC_100"
+      ]
+    },
+    {
+      "id": "npc-companion-hunter/b2",
+      "name": "Companion Hunter — Payoff",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "MEND_301",
+        "MEND_304",
+        "JAIL_831"
+      ]
+    },
+    {
+      "id": "npc-elemental-mage/b0",
+      "name": "Elemental Mage — Foundation",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "TIME_858",
+        "CATA_488",
+        "TLC_249"
+      ]
+    },
+    {
+      "id": "npc-elemental-mage/b1",
+      "name": "Elemental Mage — Momentum",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "CORE_DRG_107",
+        "JAIL_312",
+        "FIR_929"
+      ]
+    },
+    {
+      "id": "npc-elemental-mage/b2",
+      "name": "Elemental Mage — Payoff",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "CATA_487",
+        "FIR_911",
+        "CORE_CS2_023"
+      ]
+    },
+    {
+      "id": "npc-two-bit-rogue/b0",
+      "name": "Two-Bit Rogue — Foundation",
+      "family": "HERO_03",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "JAIL_720",
+        "CATA_785",
+        "CATA_614"
+      ]
+    },
+    {
+      "id": "npc-two-bit-rogue/b1",
+      "name": "Two-Bit Rogue — Momentum",
+      "family": "HERO_03",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "TIME_875t",
+        "JAIL_470",
+        "TIME_875"
+      ]
+    },
+    {
+      "id": "npc-two-bit-rogue/b2",
+      "name": "Two-Bit Rogue — Payoff",
+      "family": "HERO_03",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "JAIL_474",
+        "CORE_EX1_145",
+        "CORE_RLK_567"
+      ]
+    },
+    {
+      "id": "npc-death-knight-aggro/b0",
+      "name": "Raptor Corpse Aggro — Foundation",
+      "family": "HERO_11",
+      "archetype": "aggro",
+      "weight": 3,
+      "cards": [
+        "RLK_061",
+        "JAIL_450",
+        "RLK_708"
+      ]
+    },
+    {
+      "id": "npc-death-knight-aggro/b1",
+      "name": "Raptor Corpse Aggro — Momentum",
+      "family": "HERO_11",
+      "archetype": "aggro",
+      "weight": 3,
+      "cards": [
+        "TLC_443",
+        "TIME_617",
+        "TLC_432"
+      ]
+    },
+    {
+      "id": "npc-death-knight-aggro/b2",
+      "name": "Raptor Corpse Aggro — Payoff",
+      "family": "HERO_11",
+      "archetype": "aggro",
+      "weight": 3,
+      "cards": [
+        "JAIL_440",
+        "TLC_436",
+        "CATA_471"
+      ]
+    },
+    {
+      "id": "npc-death-knight-bwonsamdi/b0",
+      "name": "Bwonsamdi Deathrattle DK — Foundation",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "EDR_814",
+        "CORE_EDR_002",
+        "CATA_614"
+      ]
+    },
+    {
+      "id": "npc-death-knight-bwonsamdi/b1",
+      "name": "Bwonsamdi Deathrattle DK — Momentum",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "CORE_NEW1_020",
+        "RLK_708",
+        "CORE_EDR_003"
+      ]
+    },
+    {
+      "id": "npc-death-knight-bwonsamdi/b2",
+      "name": "Bwonsamdi Deathrattle DK — Payoff",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "JAIL_446",
+        "TIME_616",
+        "EDR_856"
+      ]
+    },
+    {
+      "id": "npc-death-knight-thalena/b0",
+      "name": "Thal'ena Corpse Value DK — Foundation",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "JAIL_446",
+        "CORE_RLK_062",
+        "JAIL_440"
+      ]
+    },
+    {
+      "id": "npc-death-knight-thalena/b1",
+      "name": "Thal'ena Corpse Value DK — Momentum",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "JAIL_454",
+        "TLC_436",
+        "JAIL_444"
+      ]
+    },
+    {
+      "id": "npc-death-knight-thalena/b2",
+      "name": "Thal'ena Corpse Value DK — Payoff",
+      "family": "HERO_11",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "CATA_471",
+        "END_004",
+        "EDR_813"
+      ]
+    },
+    {
+      "id": "npc-demon-hunter-quest/b0",
+      "name": "Colossus Quest Demon Hunter — Foundation",
+      "family": "HERO_10",
+      "archetype": "aggro",
+      "weight": 5,
+      "cards": [
+        "TLC_833",
+        "CATA_527",
+        "EDR_820"
+      ]
+    },
+    {
+      "id": "npc-demon-hunter-quest/b1",
+      "name": "Colossus Quest Demon Hunter — Momentum",
+      "family": "HERO_10",
+      "archetype": "aggro",
+      "weight": 5,
+      "cards": [
+        "DINO_136",
+        "JAIL_719",
+        "TLC_630"
+      ]
+    },
+    {
+      "id": "npc-demon-hunter-quest/b2",
+      "name": "Colossus Quest Demon Hunter — Payoff",
+      "family": "HERO_10",
+      "archetype": "aggro",
+      "weight": 5,
+      "cards": [
+        "CORE_YOP_001",
+        "CATA_528",
+        "TLC_631"
+      ]
+    },
+    {
+      "id": "npc-demon-hunter-raza/b0",
+      "name": "Broxigar Raza Demon Hunter — Foundation",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 3,
+      "cards": [
+        "TLC_902",
+        "END_007",
+        "END_008"
+      ]
+    },
+    {
+      "id": "npc-demon-hunter-raza/b1",
+      "name": "Broxigar Raza Demon Hunter — Momentum",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 3,
+      "cards": [
+        "CORE_SW_072",
+        "CORE_TTN_843",
+        "CORE_SW_066"
+      ]
+    },
+    {
+      "id": "npc-demon-hunter-raza/b2",
+      "name": "Broxigar Raza Demon Hunter — Payoff",
+      "family": "HERO_10",
+      "archetype": "tempo",
+      "weight": 3,
+      "cards": [
+        "END_004",
+        "CORE_UNG_205",
+        "CORE_YOP_001"
+      ]
+    },
+    {
+      "id": "npc-druid-azshara/b0",
+      "name": "Azshara Ramp Druid — Foundation",
+      "family": "HERO_06",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "END_007",
+        "TLC_100",
+        "EDR_856"
+      ]
+    },
+    {
+      "id": "npc-druid-azshara/b1",
+      "name": "Azshara Ramp Druid — Momentum",
+      "family": "HERO_06",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "JAIL_875",
+        "FIR_907",
+        "TIME_211"
+      ]
+    },
+    {
+      "id": "npc-druid-azshara/b2",
+      "name": "Azshara Ramp Druid — Payoff",
+      "family": "HERO_06",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "EDR_272",
+        "END_010",
+        "CATA_139"
+      ]
+    },
+    {
+      "id": "npc-hunter-face/b0",
+      "name": "Tripwire Face Hunter — Foundation",
+      "family": "HERO_05",
+      "archetype": "aggro",
+      "weight": 3,
+      "cards": [
+        "CATA_554",
+        "CORE_UNG_205",
+        "TIME_606"
+      ]
+    },
+    {
+      "id": "npc-hunter-face/b1",
+      "name": "Tripwire Face Hunter — Momentum",
+      "family": "HERO_05",
+      "archetype": "aggro",
+      "weight": 3,
+      "cards": [
+        "CATA_558",
+        "TLC_249",
+        "JAIL_380"
+      ]
+    },
+    {
+      "id": "npc-hunter-face/b2",
+      "name": "Tripwire Face Hunter — Payoff",
+      "family": "HERO_05",
+      "archetype": "aggro",
+      "weight": 3,
+      "cards": [
+        "CORE_DS1_184",
+        "CORE_BAR_801",
+        "TIME_601"
+      ]
+    },
+    {
+      "id": "npc-hunter-magmaw/b0",
+      "name": "Colossal Magmaw Hunter — Foundation",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "CATA_557",
+        "JAIL_877",
+        "EDR_261"
+      ]
+    },
+    {
+      "id": "npc-hunter-magmaw/b1",
+      "name": "Colossal Magmaw Hunter — Momentum",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "JAIL_882",
+        "TIME_609",
+        "JAIL_879"
+      ]
+    },
+    {
+      "id": "npc-hunter-magmaw/b2",
+      "name": "Colossal Magmaw Hunter — Payoff",
+      "family": "HERO_05",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "JAIL_876",
+        "CORE_SW_066",
+        "CATA_550"
+      ]
+    },
+    {
+      "id": "npc-hunter-quest/b0",
+      "name": "Food Chain Quest Hunter — Foundation",
+      "family": "HERO_05",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "END_013",
+        "CORE_EX1_014",
+        "TIME_053"
+      ]
+    },
+    {
+      "id": "npc-hunter-quest/b1",
+      "name": "Food Chain Quest Hunter — Momentum",
+      "family": "HERO_05",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "TLC_825",
+        "TLC_366",
+        "EDR_453"
+      ]
+    },
+    {
+      "id": "npc-hunter-quest/b2",
+      "name": "Food Chain Quest Hunter — Payoff",
+      "family": "HERO_05",
+      "archetype": "tempo",
+      "weight": 5,
+      "cards": [
+        "FIR_959",
+        "CATA_554",
+        "CORE_UNG_912"
+      ]
+    },
+    {
+      "id": "npc-mage-imbue/b0",
+      "name": "Titanographer Imbue Mage — Foundation",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 6,
+      "cards": [
+        "JAIL_379",
+        "EDR_856",
+        "EDR_860"
+      ]
+    },
+    {
+      "id": "npc-mage-imbue/b1",
+      "name": "Titanographer Imbue Mage — Momentum",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 6,
+      "cards": [
+        "END_023",
+        "JAIL_122",
+        "EDR_519"
+      ]
+    },
+    {
+      "id": "npc-mage-imbue/b2",
+      "name": "Titanographer Imbue Mage — Payoff",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 6,
+      "cards": [
+        "CORE_CS2_028",
+        "TLC_452",
+        "CORE_BT_072"
+      ]
+    },
+    {
+      "id": "npc-mage-leyline/b0",
+      "name": "Leyline Spell Mage — Foundation",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "MEND_504",
+        "MEND_506",
+        "CORE_BAR_541"
+      ]
+    },
+    {
+      "id": "npc-mage-leyline/b1",
+      "name": "Leyline Spell Mage — Momentum",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "TIME_855",
+        "END_025",
+        "MEND_501"
+      ]
+    },
+    {
+      "id": "npc-mage-leyline/b2",
+      "name": "Leyline Spell Mage — Payoff",
+      "family": "HERO_08",
+      "archetype": "tempo",
+      "weight": 4,
+      "cards": [
+        "TLC_365",
+        "MEND_500",
+        "EDR_856"
+      ]
+    },
+    {
+      "id": "npc-mage-quest/b0",
+      "name": "Forbidden Sequence Quest Mage — Foundation",
+      "family": "HERO_08",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "EDR_872",
+        "TLC_460",
+        "JAIL_319"
+      ]
+    },
+    {
+      "id": "npc-mage-quest/b1",
+      "name": "Forbidden Sequence Quest Mage — Momentum",
+      "family": "HERO_08",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CATA_484",
+        "CORE_BAR_541",
+        "CATA_614"
+      ]
+    },
+    {
+      "id": "npc-mage-quest/b2",
+      "name": "Forbidden Sequence Quest Mage — Payoff",
+      "family": "HERO_08",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "TLC_364",
+        "CAP_407",
+        "EDR_517"
+      ]
+    },
+    {
+      "id": "npc-paladin-egg/b0",
+      "name": "Khelos Egg Paladin — Foundation",
+      "family": "HERO_04",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_EX1_619",
+        "CORE_TRL_307",
+        "CORE_BT_292"
+      ]
+    },
+    {
+      "id": "npc-paladin-egg/b1",
+      "name": "Khelos Egg Paladin — Momentum",
+      "family": "HERO_04",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "JAIL_377",
+        "DINO_411",
+        "TTN_851"
+      ]
+    },
+    {
+      "id": "npc-paladin-egg/b2",
+      "name": "Khelos Egg Paladin — Payoff",
+      "family": "HERO_04",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_CS2_093",
+        "EDR_571",
+        "CORE_CS2_094"
+      ]
+    },
+    {
+      "id": "npc-priest-egg/b0",
+      "name": "Khelos Egg Priest — Foundation",
+      "family": "HERO_09",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "JAIL_913",
+        "CATA_308",
+        "TLC_106"
+      ]
+    },
+    {
+      "id": "npc-priest-egg/b1",
+      "name": "Khelos Egg Priest — Momentum",
+      "family": "HERO_09",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "JAIL_912",
+        "CORE_CS1_130",
+        "DINO_411"
+      ]
+    },
+    {
+      "id": "npc-priest-egg/b2",
+      "name": "Khelos Egg Priest — Payoff",
+      "family": "HERO_09",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CATA_303",
+        "EDR_463",
+        "END_025"
+      ]
+    },
+    {
+      "id": "npc-priest-reborn/b0",
+      "name": "Raith Reborn Priest — Foundation",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "JAIL_913",
+        "CATA_308",
+        "TIME_064"
+      ]
+    },
+    {
+      "id": "npc-priest-reborn/b1",
+      "name": "Raith Reborn Priest — Momentum",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "TLC_106",
+        "CAP_806",
+        "JAIL_912"
+      ]
+    },
+    {
+      "id": "npc-priest-reborn/b2",
+      "name": "Raith Reborn Priest — Payoff",
+      "family": "HERO_09",
+      "archetype": "control",
+      "weight": 4,
+      "cards": [
+        "EDR_000",
+        "CORE_CS2_004",
+        "TLC_817"
+      ]
+    },
+    {
+      "id": "npc-rogue-burn/b0",
+      "name": "Fan of Knives Burn Rogue — Foundation",
+      "family": "HERO_03",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "CAP_003",
+        "CAP_001",
+        "TIME_001"
+      ]
+    },
+    {
+      "id": "npc-rogue-burn/b1",
+      "name": "Fan of Knives Burn Rogue — Momentum",
+      "family": "HERO_03",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "TIME_875t",
+        "CAP_000",
+        "END_031"
+      ]
+    },
+    {
+      "id": "npc-rogue-burn/b2",
+      "name": "Fan of Knives Burn Rogue — Payoff",
+      "family": "HERO_03",
+      "archetype": "aggro",
+      "weight": 4,
+      "cards": [
+        "TIME_875",
+        "CAP_005",
+        "END_036"
+      ]
+    },
+    {
+      "id": "npc-rogue-mill/b0",
+      "name": "Ysera Fatigue Rogue — Foundation",
+      "family": "HERO_03",
+      "archetype": "control",
+      "weight": 3,
+      "cards": [
+        "CORE_KAR_061",
+        "JAIL_504",
+        "TIME_064"
+      ]
+    },
+    {
+      "id": "npc-rogue-mill/b1",
+      "name": "Ysera Fatigue Rogue — Momentum",
+      "family": "HERO_03",
+      "archetype": "control",
+      "weight": 3,
+      "cards": [
+        "TLC_106",
+        "EDR_844",
+        "CATA_201"
+      ]
+    },
+    {
+      "id": "npc-rogue-mill/b2",
+      "name": "Ysera Fatigue Rogue — Payoff",
+      "family": "HERO_03",
+      "archetype": "control",
+      "weight": 3,
+      "cards": [
+        "EDR_000",
+        "CORE_RLK_567",
+        "CATA_200"
+      ]
+    },
+    {
+      "id": "npc-rogue-quest/b0",
+      "name": "Lie in Wait Quest Rogue — Foundation",
+      "family": "HERO_03",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CAP_005",
+        "TIME_064",
+        "TLC_106"
+      ]
+    },
+    {
+      "id": "npc-rogue-quest/b1",
+      "name": "Lie in Wait Quest Rogue — Momentum",
+      "family": "HERO_03",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_CS2_072",
+        "CORE_EX1_145",
+        "CORE_RLK_567"
+      ]
+    },
+    {
+      "id": "npc-rogue-quest/b2",
+      "name": "Lie in Wait Quest Rogue — Payoff",
+      "family": "HERO_03",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CAP_004",
+        "TLC_517",
+        "TLC_513"
+      ]
+    },
+    {
+      "id": "npc-shaman-herald/b0",
+      "name": "Muradin Herald Shaman — Foundation",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "CATA_561",
+        "CATA_565",
+        "TLC_222"
+      ]
+    },
+    {
+      "id": "npc-shaman-herald/b1",
+      "name": "Muradin Herald Shaman — Momentum",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "CORE_EX1_246",
+        "CORE_EX1_259",
+        "TLC_100"
+      ]
+    },
+    {
+      "id": "npc-shaman-herald/b2",
+      "name": "Muradin Herald Shaman — Payoff",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 4,
+      "cards": [
+        "EDR_856",
+        "CATA_722",
+        "TIME_209"
+      ]
+    },
+    {
+      "id": "npc-shaman-masochist/b0",
+      "name": "Muradin Masochist Shaman — Foundation",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "CATA_497",
+        "CATA_153",
+        "CATA_568"
+      ]
+    },
+    {
+      "id": "npc-shaman-masochist/b1",
+      "name": "Muradin Masochist Shaman — Momentum",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "CATA_190h",
+        "TIME_218",
+        "CORE_GIL_531"
+      ]
+    },
+    {
+      "id": "npc-shaman-masochist/b2",
+      "name": "Muradin Masochist Shaman — Payoff",
+      "family": "HERO_02",
+      "archetype": "midrange",
+      "weight": 6,
+      "cards": [
+        "JAIL_452",
+        "TIME_212",
+        "CORE_BOT_451"
+      ]
+    },
+    {
+      "id": "npc-warlock-godfrey/b0",
+      "name": "Godfrey Overdraw Warlock — Foundation",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "JAIL_511",
+        "JAIL_398",
+        "JAIL_514"
+      ]
+    },
+    {
+      "id": "npc-warlock-godfrey/b1",
+      "name": "Godfrey Overdraw Warlock — Momentum",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "TLC_451",
+        "FIR_954",
+        "END_020"
+      ]
+    },
+    {
+      "id": "npc-warlock-godfrey/b2",
+      "name": "Godfrey Overdraw Warlock — Payoff",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 5,
+      "cards": [
+        "CORE_SCH_713",
+        "CATA_496",
+        "JAIL_997"
+      ]
+    },
+    {
+      "id": "npc-warlock-pig/b0",
+      "name": "Agamaggan Pig Warlock — Foundation",
+      "family": "HERO_07",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CORE_UNG_205",
+        "CORE_EX1_302",
+        "EDR_485"
+      ]
+    },
+    {
+      "id": "npc-warlock-pig/b1",
+      "name": "Agamaggan Pig Warlock — Momentum",
+      "family": "HERO_07",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CATA_496",
+        "CORE_ICC_055",
+        "CATA_725"
+      ]
+    },
+    {
+      "id": "npc-warlock-pig/b2",
+      "name": "Agamaggan Pig Warlock — Payoff",
+      "family": "HERO_07",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CORE_CS2_062",
+        "CATA_492",
+        "CORE_EX1_309"
+      ]
+    },
+    {
+      "id": "npc-warlock-wallow/b0",
+      "name": "Wallow Dark Gift Warlock — Foundation",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 6,
+      "cards": [
+        "TLC_451",
+        "EDR_485",
+        "EDR_105"
+      ]
+    },
+    {
+      "id": "npc-warlock-wallow/b1",
+      "name": "Wallow Dark Gift Warlock — Momentum",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 6,
+      "cards": [
+        "CORE_ICC_055",
+        "JAIL_513",
+        "CAP_405"
+      ]
+    },
+    {
+      "id": "npc-warlock-wallow/b2",
+      "name": "Wallow Dark Gift Warlock — Payoff",
+      "family": "HERO_07",
+      "archetype": "control",
+      "weight": 6,
+      "cards": [
+        "CORE_CS2_062",
+        "JAIL_399",
+        "CORE_EDR_004_2026"
+      ]
+    },
+    {
+      "id": "npc-warrior-egg/b0",
+      "name": "Khelos Egg Warrior — Foundation",
+      "family": "HERO_01",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_EX1_391",
+        "CATA_585",
+        "DINO_411"
+      ]
+    },
+    {
+      "id": "npc-warrior-egg/b1",
+      "name": "Khelos Egg Warrior — Momentum",
+      "family": "HERO_01",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "CORE_EX1_606",
+        "TIME_873",
+        "CORE_EX1_007"
+      ]
+    },
+    {
+      "id": "npc-warrior-egg/b2",
+      "name": "Khelos Egg Warrior — Payoff",
+      "family": "HERO_01",
+      "archetype": "combo",
+      "weight": 5,
+      "cards": [
+        "TLC_478",
+        "TLC_252",
+        "DINO_410"
+      ]
+    },
+    {
+      "id": "npc-warrior-logosh/b0",
+      "name": "Blood Fighter Lo'Gosh Warrior — Foundation",
+      "family": "HERO_01",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "END_020",
+        "CORE_CS2_108",
+        "CORE_REV_990"
+      ]
+    },
+    {
+      "id": "npc-warrior-logosh/b1",
+      "name": "Blood Fighter Lo'Gosh Warrior — Momentum",
+      "family": "HERO_01",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CORE_EX1_391",
+        "CATA_585",
+        "TIME_750"
+      ]
+    },
+    {
+      "id": "npc-warrior-logosh/b2",
+      "name": "Blood Fighter Lo'Gosh Warrior — Payoff",
+      "family": "HERO_01",
+      "archetype": "midrange",
+      "weight": 5,
+      "cards": [
+        "CATA_582",
+        "FIR_939",
+        "CORE_EX1_606"
+      ]
+    },
+    {
+      "id": "npc-warrior-quest/b0",
+      "name": "Survive Quest Warrior — Foundation",
+      "family": "HERO_01",
+      "archetype": "control",
+      "weight": 6,
+      "cards": [
+        "CATA_190h",
+        "TLC_602",
+        "END_020"
+      ]
+    },
+    {
+      "id": "npc-warrior-quest/b1",
+      "name": "Survive Quest Warrior — Momentum",
+      "family": "HERO_01",
+      "archetype": "control",
+      "weight": 6,
+      "cards": [
+        "CORE_CS2_108",
+        "JAIL_386",
+        "CATA_585"
+      ]
+    },
+    {
+      "id": "npc-warrior-quest/b2",
+      "name": "Survive Quest Warrior — Payoff",
+      "family": "HERO_01",
+      "archetype": "control",
+      "weight": 6,
+      "cards": [
+        "FIR_939",
+        "CORE_EX1_606",
+        "TLC_478"
+      ]
+    }
+  ],
+  "voiceCues": {
+    "entry": "",
+    "victory": "",
+    "defeat": ""
+  }
+}
