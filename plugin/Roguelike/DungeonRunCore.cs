@@ -227,12 +227,30 @@ namespace SoloStone.Roguelike
         }
 
         // The events are intentionally out-of-combat for v1: they require no invented client tags.
-        public static void Event(DungeonRun run, int choice)
+        public static void Event(DungeonRun run, int choice) =>
+            Event(run, choice, choice == 0 ? "gold:40" : "life:-1,reroll:2");
+
+        public static void Event(DungeonRun run, int choice, string effect)
         {
-            if (run.Step != RunStep.Event || choice < 0 || choice > 1)
+            if (run.Step != RunStep.Event || choice < 0 || choice > 1 || string.IsNullOrWhiteSpace(effect))
                 throw new InvalidOperationException("No such event choice.");
-            if (choice == 0) { run.Gold += 40; }
-            else { run.Lives = Math.Max(1, run.Lives - 1); run.Rerolls += 2; }
+            // Validate all effects before mutating anything. Content is bundled, not downloaded.
+            int gold = 0, lives = 0, rerolls = 0;
+            foreach (string part in effect.Split(','))
+            {
+                string[] pair = part.Trim().Split(':');
+                if (pair.Length != 2 || !int.TryParse(pair[1], out int amount) || Math.Abs((long)amount) > 500)
+                    throw new InvalidOperationException("Invalid event effect.");
+                if (pair[0] == "gold") gold += amount;
+                else if (pair[0] == "life") lives += amount;
+                else if (pair[0] == "reroll") rerolls += amount;
+                else throw new InvalidOperationException("Unsupported event effect.");
+            }
+            if (gold + run.Gold < 0 || rerolls + run.Rerolls < 0)
+                throw new InvalidOperationException("You cannot afford this choice.");
+            run.Gold += gold;
+            run.Lives = Math.Max(1, Math.Min(MaxLives, run.Lives + lives));
+            run.Rerolls += rerolls;
             run.EventsVisited++;
             Complete(run);
         }
@@ -261,10 +279,25 @@ namespace SoloStone.Roguelike
             if (run.Step != RunStep.Treasure || string.IsNullOrWhiteSpace(treasureId))
                 throw new InvalidOperationException("No treasure is available.");
             // A unique treasure cannot be farmed by revisiting nodes.
-            if (!run.Treasures.Contains(treasureId)) run.Treasures.Add(treasureId);
-            if (treasureId == "spare-candle") run.Lives = Math.Min(MaxLives, run.Lives + 1);
-            if (treasureId == "lucky-pick") run.Rerolls += 2;
-            if (treasureId == "coin-purse") run.Gold += 75;
+            if (run.Treasures.Contains(treasureId))
+                throw new InvalidOperationException("That treasure has already been claimed.");
+            switch (treasureId)
+            {
+                case "spare-candle": run.Lives = Math.Min(MaxLives, run.Lives + 1); break;
+                case "lucky-pick": run.Rerolls += 2; break;
+                case "coin-purse": run.Gold += 75; break;
+                case "map-fragment": run.Rerolls++; run.Gold += 20; break;
+                case "runestone": run.Lives = Math.Min(MaxLives, run.Lives + 2); break;
+                case "mirror-charm": run.Rerolls += 2; break;
+                case "dragon-scale": run.Lives = Math.Min(MaxLives, run.Lives + 1); run.Gold += 35; break;
+                case "goblet": run.Gold += 120; break;
+                case "bone-charm": run.Rerolls++; run.Gold += 60; break;
+                case "sunken-coin": run.Gold += 90; break;
+                case "lantern": run.Lives = Math.Min(MaxLives, run.Lives + 1); run.Rerolls++; break;
+                case "king-key": run.Lives = Math.Min(MaxLives, run.Lives + 2); run.Rerolls++; break;
+                default: throw new InvalidOperationException("Unknown treasure: " + treasureId);
+            }
+            run.Treasures.Add(treasureId);
             Complete(run);
         }
 
