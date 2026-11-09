@@ -80,6 +80,21 @@ internal static class DungeonMenu
         finally { if (File.Exists(staging)) File.Delete(staging); }
     }
 
+    private static void NewExpedition()
+    {
+        try
+        {
+            if (run == null || (run.Step != RunStep.Won && run.Step != RunStep.Lost))
+                throw new InvalidOperationException("Finish your current run first.");
+            if (File.Exists(savePath))
+                File.Move(savePath, savePath + ".finished-" + run.Id + ".xml");
+            run = null;
+            scroll = Vector2.zero;
+            error = null;
+        }
+        catch (Exception e) { error = e.Message; }
+    }
+
     private static void Mutate(Action action)
     {
         try { action(); Save(); error = null; }
@@ -159,7 +174,7 @@ internal static class DungeonMenu
             {
                 GUI.Label(new Rect(905, 490, 300, 60), run.Step == RunStep.Won ? "THE DEEP DELVE CLEARED!" : "YOUR EXPEDITION HAS ENDED", text);
                 if (GUI.Button(new Rect(905, 560, 300, 50), "New expedition", button))
-                    Mutate(() => run = null);
+                    NewExpedition();
             }
         }
         GUI.matrix = oldMatrix; GUI.color = oldColor;
@@ -250,7 +265,7 @@ internal static class DungeonMenu
             {
                 int n = i;
                 if (GUI.Button(new Rect(905, 530 + 56 * i, 300, 48), evt.Choices[i], button))
-                    Mutate(() => DungeonRules.Event(run, n));
+                    Mutate(() => DungeonRules.Event(run, n, evt.Effects[n]));
             }
         }
         else if (run.Step == RunStep.Rest || run.Step == RunStep.Merchant || run.Step == RunStep.Treasure)
