@@ -18,6 +18,15 @@ public sealed class LocalDeck
     public readonly DeckStyle Style;
     private readonly string[] cards;
     private Dictionary<string, string[]> sideboards = new Dictionary<string, string[]>();
+    // Separate, temporary dungeon decks can grow beyond the 30-card constructed format.
+    // They never enter the collection ledger or the native deck editor.
+    internal bool DungeonDeck { get; private set; }
+    internal static LocalDeck ForDungeon(string hero, IEnumerable<string> ids)
+    {
+        var deck = new LocalDeck("Dungeon expedition", hero, (ids ?? Enumerable.Empty<string>()).ToArray());
+        deck.DungeonDeck = true;
+        return deck;
+    }
     public IReadOnlyDictionary<string, string[]> Sideboards => sideboards.ToDictionary(row => row.Key, row => row.Value.ToArray());
     internal LocalDeck WithSideboards(IEnumerable<LocalSideboard> selections, bool complete = false, bool allowInactive = false)
     {
@@ -46,9 +55,13 @@ public sealed class LocalDeck
     public List<EngineCard> Build()
     {
         var result = cards.Select(Cards.FromId).ToList();
-        if (result.Count != LocalDecks.DeckSize(cards) || result.Any(c => c == null)) throw new InvalidOperationException("Invalid local deck " + Id);
+        if (result.Any(c => c == null) || (DungeonDeck
+            ? result.Count < 10 || result.Count > 70
+            : result.Count != LocalDecks.DeckSize(cards)))
+            throw new InvalidOperationException("Invalid local deck " + Id);
 #if ENGINE_SOURCE
-        SabberStoneCore.Actions.DeckbuildingRules.Validate(cards, sideboards, SabberStoneCore.Enums.FormatType.FT_WILD);
+        if (!DungeonDeck)
+            SabberStoneCore.Actions.DeckbuildingRules.Validate(cards, sideboards, SabberStoneCore.Enums.FormatType.FT_WILD);
 #endif
         return result;
     }
