@@ -36,6 +36,7 @@ static partial class Program
             if (args.Contains("--retry")) { EarlyFailures(temp); ReusedBackups(temp); LastSmallRound(temp); FailingSwaps(temp); FinalRoundRelease(temp); KillThenRetry(temp); BusyFiles(temp); Console.WriteLine("PASS " + count + " retry checks"); return 0; }
             if (args.Contains("--preflight")) { AppOnlyPreflight(temp); Console.WriteLine("PASS " + count + " app preflight checks"); return 0; }
             if (args.Contains("--policy")) { ClientPolicyTests(temp); Console.WriteLine("PASS " + count + " policy checks"); return 0; }
+            if (args.Contains("--roguelike")) { RoguelikeTests(temp); Console.WriteLine("PASS " + count + " roguelike checks"); return 0; }
             // Fast loop for window work: dotnet run -- --gui
             if (args.Contains("--gui")) { GuiTests(); HookTests(temp); GuiBoundaryTests(); Console.WriteLine("PASS " + count + " window checks"); return 0; }
             EarlyFailures(temp);
@@ -157,6 +158,7 @@ static partial class Program
             BoundaryTests();
             GuiTests();
             HookTests(temp);
+            RoguelikeTests(temp);
             if(skipped.Count!=0 && Environment.GetEnvironmentVariable("SOLOSTONE_REQUIRE_ALL")=="1") { Console.Error.WriteLine("FAIL: skipped with SOLOSTONE_REQUIRE_ALL=1: "+string.Join("; ",skipped)); return 1; }
             Console.WriteLine("PASS "+count+" installer checks, "+skipped.Count+" skipped"+(skipped.Count==0?"":" ("+string.Join("; ",skipped)+")")); return 0;
         } catch(Exception e) { Console.Error.WriteLine(e); return 1; }
