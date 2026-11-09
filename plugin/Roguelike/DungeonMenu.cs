@@ -95,10 +95,22 @@ internal static class DungeonMenu
         catch (Exception e) { error = e.Message; }
     }
 
+    private static DungeonRun Snapshot(DungeonRun source)
+    {
+        if (source == null) return null;
+        using (var stream = new MemoryStream())
+        {
+            serializer.Serialize(stream, source);
+            stream.Position = 0;
+            return (DungeonRun)serializer.Deserialize(stream);
+        }
+    }
+
     private static void Mutate(Action action)
     {
+        DungeonRun previous = Snapshot(run);
         try { action(); Save(); error = null; }
-        catch (Exception e) { error = e.Message; }
+        catch (Exception e) { run = previous; error = e.Message; }
     }
 
     internal static void RegisterBattle(string matchId)
@@ -118,6 +130,7 @@ internal static class DungeonMenu
     internal static void BattleSettled(string matchId, string result, bool conceded)
     {
         if (run == null || run.AttemptId != matchId) return;
+        var previous = Snapshot(run);
         try
         {
             DungeonRules.BattleResult(run, matchId, result == "Won" && !conceded, DungeonContent.Current.ForHero(run.Hero));
@@ -127,8 +140,12 @@ internal static class DungeonMenu
         }
         catch (Exception e)
         {
+            // Restore the entire attempt checkpoint: the normal profile settlement must
+            // not drop its Pending while a dungeon receipt has failed to persist.
+            run = previous;
             error = "Dungeon result was not saved: " + e.Message;
             Debug.LogError(error);
+            throw;
         }
     }
 
