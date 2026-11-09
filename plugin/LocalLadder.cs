@@ -133,9 +133,10 @@ internal static class LocalLadder
         if (!nativeFinished && Time.realtimeSinceStartup - scenarioDoneAt < 20) return;
         try
         {
-            profile.Settle(active.Id, terminalOutcome ?? "Lost", terminalTurns, conceded, terminalFacts, active.NpcRating);
-            // No ordinary reward / ladder settlement; the dungeon receipt lives next to this profile.
+            // Dungeon receipt first. If its checkpoint cannot be committed, keep the
+            // debug-scenario Pending for the existing retry path instead of losing the run.
             DungeonMenu.BattleSettled(active.Id, terminalOutcome ?? "Lost", conceded);
+            profile.Settle(active.Id, terminalOutcome ?? "Lost", terminalTurns, conceded, terminalFacts, active.NpcRating);
             Debug.Log("DEBUG_SCENARIO finished match=" + active.Id + " result=" + terminalOutcome + " (no progression)");
             RewardPresentationComplete();
         }
