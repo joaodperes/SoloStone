@@ -181,7 +181,7 @@ internal static class DungeonMenu
 
     private static void Map()
     {
-        var available = DungeonRules.Available(run).Select(n => n.Id).ToHashSet();
+        var available = new HashSet<int>(DungeonRules.Available(run).Select(n => n.Id));
         GUI.Box(new Rect(42, 135, 814, 505), "", box);
         scroll = GUI.BeginScrollView(new Rect(60, 154, 782, 462), scroll, new Rect(0, 0, 732, 18 * 74 + 30));
         for (int floor = 0; floor < DungeonRules.Acts * DungeonRules.FloorsPerAct; floor++)
