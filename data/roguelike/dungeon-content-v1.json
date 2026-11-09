@@ -526,11 +526,11 @@
       "choices": [
         {
           "title": "Help and receive thanks",
-          "effect": "gold:40"
+          "effect": "gold:20,reroll:1"
         },
         {
           "title": "Scare it away",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:-1,gold:100"
         }
       ]
     },
@@ -541,11 +541,11 @@
       "choices": [
         {
           "title": "Take the safe path",
-          "effect": "gold:40"
+          "effect": "gold:35"
         },
         {
           "title": "Squeeze through",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:-1,reroll:3"
         }
       ]
     },
@@ -556,11 +556,11 @@
       "choices": [
         {
           "title": "Sell the maps",
-          "effect": "gold:40"
+          "effect": "gold:45"
         },
         {
           "title": "Study forbidden notes",
-          "effect": "life:-1,reroll:2"
+          "effect": "gold:-25,reroll:3"
         }
       ]
     },
@@ -571,11 +571,11 @@
       "choices": [
         {
           "title": "Collect dropped coins",
-          "effect": "gold:40"
+          "effect": "gold:55"
         },
         {
           "title": "Risk the short way",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:-1,gold:95"
         }
       ]
     },
@@ -586,11 +586,11 @@
       "choices": [
         {
           "title": "Trade your scraps",
-          "effect": "gold:40"
+          "effect": "reroll:1"
         },
         {
           "title": "Test the machine",
-          "effect": "life:-1,reroll:2"
+          "effect": "gold:-40,reroll:4"
         }
       ]
     },
@@ -601,11 +601,11 @@
       "choices": [
         {
           "title": "Search the banks",
-          "effect": "gold:40"
+          "effect": "gold:20"
         },
         {
           "title": "Drink from the spring",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:-1,gold:100"
         }
       ]
     },
@@ -616,11 +616,11 @@
       "choices": [
         {
           "title": "Search abandoned packs",
-          "effect": "gold:40"
+          "effect": "life:1"
         },
         {
           "title": "Follow the smoke",
-          "effect": "life:-1,reroll:2"
+          "effect": "gold:70"
         }
       ]
     },
@@ -631,7 +631,7 @@
       "choices": [
         {
           "title": "Collect the tribute",
-          "effect": "gold:40"
+          "effect": "gold:30"
         },
         {
           "title": "Read its challenge",
@@ -646,11 +646,11 @@
       "choices": [
         {
           "title": "Trade the keepsakes",
-          "effect": "gold:40"
+          "effect": "gold:75"
         },
         {
           "title": "Roll the bone dice",
-          "effect": "life:-1,reroll:2"
+          "effect": "gold:-45,life:2"
         }
       ]
     },
@@ -661,11 +661,11 @@
       "choices": [
         {
           "title": "Collect scattered gold",
-          "effect": "gold:40"
+          "effect": "reroll:2"
         },
         {
           "title": "Trust the strange whispers",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:-1,gold:110"
         }
       ]
     },
@@ -676,11 +676,11 @@
       "choices": [
         {
           "title": "Take the bounty",
-          "effect": "gold:40"
+          "effect": "gold:45"
         },
         {
           "title": "Ask for a secret",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:1"
         }
       ]
     },
@@ -691,11 +691,11 @@
       "choices": [
         {
           "title": "Harvest the spores",
-          "effect": "gold:40"
+          "effect": "gold:30"
         },
         {
           "title": "Breathe the enchanted air",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:-1,reroll:3"
         }
       ]
     },
@@ -710,7 +710,7 @@
         },
         {
           "title": "Strike the rune",
-          "effect": "life:-1,reroll:2"
+          "effect": "gold:-30,life:2"
         }
       ]
     },
@@ -721,7 +721,7 @@
       "choices": [
         {
           "title": "Pocket a loose gem",
-          "effect": "gold:40"
+          "effect": "gold:90"
         },
         {
           "title": "Approach its dreams",
@@ -736,11 +736,11 @@
       "choices": [
         {
           "title": "Take its coins",
-          "effect": "gold:40"
+          "effect": "reroll:1,gold:25"
         },
         {
           "title": "Defy its forecast",
-          "effect": "life:-1,reroll:2"
+          "effect": "life:-1,gold:130"
         }
       ]
     }
@@ -767,56 +767,56 @@
     {
       "id": "map-fragment",
       "title": "Map Fragment",
-      "description": "A record of your journey.",
-      "implemented": false
+      "description": "Gain one reroll and 20 dungeon gold.",
+      "implemented": true
     },
     {
       "id": "runestone",
       "title": "Runestone",
-      "description": "A curious keepsake from the halls.",
-      "implemented": false
+      "description": "Gain two lives (maximum five).",
+      "implemented": true
     },
     {
       "id": "mirror-charm",
       "title": "Mirror Charm",
-      "description": "A trophy from an impossible reflection.",
-      "implemented": false
+      "description": "Gain two draft rerolls.",
+      "implemented": true
     },
     {
       "id": "dragon-scale",
       "title": "Dragon Scale",
-      "description": "A scale warm to the touch.",
-      "implemented": false
+      "description": "Gain one life and 35 gold.",
+      "implemented": true
     },
     {
       "id": "goblet",
       "title": "Forgotten Goblet",
-      "description": "An ornate goblet from the royal vault.",
-      "implemented": false
+      "description": "Gain 120 dungeon gold.",
+      "implemented": true
     },
     {
       "id": "bone-charm",
       "title": "Bone Charm",
-      "description": "A charm carved from an ancient relic.",
-      "implemented": false
+      "description": "Gain one reroll and 60 gold.",
+      "implemented": true
     },
     {
       "id": "sunken-coin",
       "title": "Sunken Coin",
-      "description": "A coin engraved with a lost kingdom.",
-      "implemented": false
+      "description": "Gain 90 dungeon gold.",
+      "implemented": true
     },
     {
       "id": "lantern",
       "title": "Glowing Lantern",
-      "description": "A cold and steady light.",
-      "implemented": false
+      "description": "Gain one life and one reroll.",
+      "implemented": true
     },
     {
       "id": "king-key",
       "title": "King's Key",
-      "description": "A key to a sealed gate.",
-      "implemented": false
+      "description": "Gain two lives and one reroll.",
+      "implemented": true
     }
   ],
   "buckets": [
