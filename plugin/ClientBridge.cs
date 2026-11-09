@@ -426,7 +426,8 @@ internal static class ClientBridge
         else NativeUIProjection.ValidateMatchDeckBinding(deck, player);
         var prepared = player == null
             ? new NativeMatch(Send, deck, opponent, seed, stars)
-            : new NativeMatch(Send, player, opponent, seed, stars, premiumEntries) { CosmeticDeckId = PersonalDeckId(deck) };
+            : new NativeMatch(Send, player, opponent, seed, stars, premiumEntries, dungeon)
+                { CosmeticDeckId = dungeon ? null : PersonalDeckId(deck) };
         var defs = DefLoader.Get().GetAllEntityDefs();
         log.LogInfo("LOCAL_HERO_DEFS Fireblast=" + defs.ContainsKey("HERO_08bp"));
         foreach (string id in RequiredPaladinDefinitions)
