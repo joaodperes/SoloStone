@@ -494,10 +494,14 @@ public sealed class NativeMatch
     }
 
     public NativeMatch(Action<int, IProtoBuf> send, LocalDeck player, string opponent, int seed, int startingStars = 0,
-        IEnumerable<LocalDeckCard> cardEntries = null) : this(send)
+        IEnumerable<LocalDeckCard> cardEntries = null, bool dungeon = false) : this(send)
     {
         if (player == null) throw new ArgumentNullException(nameof(player));
-        playerDeck = LocalProfile.PlayableDeck(player.Name, player.Hero, player.CardIds,
+        if (dungeon && !player.DungeonDeck)
+            throw new InvalidOperationException("Only validated temporary dungeon decks can bypass constructed rules.");
+        // Regular custom decks keep the exact old ownership, capacity and validation path.
+        // Dungeon decks are never stored in the account collection and can grow after draft rewards.
+        playerDeck = dungeon ? player : LocalProfile.PlayableDeck(player.Name, player.Hero, player.CardIds,
             player.Sideboards.Select(row => new LocalSideboard { Source = row.Key, Cards = row.Value.ToList() }));
         opponentDeck = LocalDecks.Get(opponent);
         playerHero = ResolveHero(playerDeck.Hero);
