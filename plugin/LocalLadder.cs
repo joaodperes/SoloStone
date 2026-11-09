@@ -183,8 +183,11 @@ internal static class LocalLadder
         // A run deck is an unowned, temporary snapshot; it never becomes a custom collection deck.
         var dungeonDeck = LocalDeck.ForDungeon(run.Hero, run.Deck);
         int seed = unchecked((run.Seed ^ ((run.ActiveRoom + 1) * 100003)) & int.MaxValue);
-        int act = run.Rooms.Single(room => room.Id == run.ActiveRoom).Floor / SoloStone.Roguelike.DungeonRules.FloorsPerAct;
-        int skillStars = act == 0 ? 25 : act == 1 ? 75 : 145;
+        var room = run.Rooms.Single(node => node.Id == run.ActiveRoom);
+        int act = room.Floor / SoloStone.Roguelike.DungeonRules.FloorsPerAct;
+        int baseStars = act == 0 ? 25 : act == 1 ? 75 : 110;
+        int skillStars = Math.Min(150, baseStars + (room.Kind == SoloStone.Roguelike.RoomKind.Boss ? 40
+            : room.Kind == SoloStone.Roguelike.RoomKind.Elite ? 22 : 0));
         var prepared = ClientBridge.PrepareLocalMatch(starter.Id, opponent.Id, seed, skillStars, dungeonDeck,
             dungeon: true);
         try
