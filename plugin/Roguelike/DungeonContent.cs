@@ -99,11 +99,24 @@ internal sealed class DungeonContent
         }
     }
 
-    internal IReadOnlyList<Bucket> ForHero(string hero) => Buckets.Where(b => b.Family == hero
-        && b.Cards.All(id => {
-            try { return LocalDecks.IsLegalDeckbuildingCard(id) && ClientBridge.ClientKnowsCard(id); }
-            catch { return false; }
-        })).ToArray();
+    internal IReadOnlyList<Bucket> ForHero(string hero)
+    {
+        var eligible = Buckets.Where(b => b.Family == hero
+            && b.Cards.All(id => {
+                try { return LocalDecks.IsLegalDeckbuildingCard(id) && ClientBridge.ClientKnowsCard(id); }
+                catch { return false; }
+            })).ToArray();
+        if (eligible.Length > 0) return eligible;
+        // A changed client pool must not strand the player after winning an encounter.
+        var starter = LocalDecks.All.FirstOrDefault(deck => deck.Hero == hero);
+        if (starter == null) return new Bucket[0];
+        var ids = starter.CardIds.Distinct(StringComparer.Ordinal).Where(ClientBridge.ClientKnowsCard).ToArray();
+        var fallback = new List<Bucket>();
+        for (int i = 0; i + 2 < ids.Length && fallback.Count < 5; i += 3)
+            fallback.Add(new Bucket { Id = "starter/" + hero + "/" + i, Name = "Starter reserves",
+                Family = hero, Weight = 1, Cards = ids.Skip(i).Take(3).ToList() });
+        return fallback;
+    }
 
     internal EventInfo EventFor(DungeonRun run)
     {
