@@ -137,12 +137,23 @@ internal sealed class DungeonContent
         var room = run.Rooms.Single(r => r.Id == run.ActiveRoom);
         // The current combat seam is known-good prebuilt NPC decks. A future encounter adapter
         // can bind Dungeon-specific hero powers without ever contacting the retail servers.
-        var possible = LocalDecks.All.Concat(LocalDecks.NpcDecks).Where(d => {
-            try { return d.Build() != null; } catch { return false; }
-        }).ToArray();
-        if (possible.Length == 0) throw new InvalidOperationException("No supported opponents are installed.");
         int act = room.Floor / DungeonRules.FloorsPerAct;
+        var possible = new List<LocalDeck>();
+        // Encounter entries reference actual supported NPC deck IDs. Choose a tougher band
+        // for elite rooms; dedicated Kobolds boss powers will be a separate follow-up.
+        int targetAct = Math.Min(3, act + 1 + (room.Kind == RoomKind.Elite ? 1 : 0));
+        foreach (var entry in Encounters.Where(e => e.Act == targetAct))
+        {
+            try { var deck = LocalDecks.Get(entry.DeckId); deck.Build(); possible.Add(deck); }
+            catch (Exception) { /* A missing or inadmissible deck never traps the run. */ }
+        }
+        if (possible.Count == 0)
+            foreach (var deck in LocalDecks.NpcDecks.Concat(LocalDecks.All))
+            {
+                try { deck.Build(); possible.Add(deck); } catch (Exception) { }
+            }
+        if (possible.Count == 0) throw new InvalidOperationException("No supported opponents are installed.");
         var rng = new DungeonRandom(unchecked(run.Seed + room.Id * 8437 + act * 173));
-        return possible[rng.Next(possible.Length)];
+        return possible[rng.Next(possible.Count)];
     }
 }
