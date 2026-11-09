@@ -23,8 +23,11 @@ static partial class Program
             var visited = new HashSet<int> { node.Id };
             var queue = new Queue<int>(); queue.Enqueue(node.Id);
             while (queue.Count > 0)
-                foreach (int next in one.Rooms.Single(r => r.Id == queue.Dequeue()).Exits)
+            {
+                var current = one.Rooms.Single(r => r.Id == queue.Dequeue());
+                foreach (int next in current.Exits)
                     if (visited.Add(next)) queue.Enqueue(next);
+            }
             Check(visited.Any(id => one.Rooms.Single(r => r.Id == id).Floor == 17),
                 "dungeon: no isolated room " + node.Id);
         }
