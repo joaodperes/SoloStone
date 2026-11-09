@@ -31,7 +31,7 @@ internal static class DungeonMenu
             visible = false;
             run = null; error = null; profilePath = next;
             savePath = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(next)), "dungeon-run.xml");
-            try { Load(); } catch (Exception e) { error = "Run save could not be loaded: " + e.Message; }
+            try { Load(); } catch (Exception e) { run = null; error = "Run save could not be loaded: " + e.Message; }
         }
         if (Available && Input.GetKeyDown(KeyCode.F8)) visible = !visible;
         if (visible && !Available && LocalLadder.Screen != "Menu") visible = false;
