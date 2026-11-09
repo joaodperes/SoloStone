@@ -23,9 +23,7 @@ public sealed class LocalDeck
     internal bool DungeonDeck { get; private set; }
     internal static LocalDeck ForDungeon(string hero, IEnumerable<string> ids)
     {
-        var deck = new LocalDeck("Dungeon expedition", hero, (ids ?? Enumerable.Empty<string>()).ToArray());
-        deck.DungeonDeck = true;
-        return deck;
+        return new LocalDeck("Dungeon expedition", hero, (ids ?? Enumerable.Empty<string>()).ToArray(), true);
     }
     public IReadOnlyDictionary<string, string[]> Sideboards => sideboards.ToDictionary(row => row.Key, row => row.Value.ToArray());
     internal LocalDeck WithSideboards(IEnumerable<LocalSideboard> selections, bool complete = false, bool allowInactive = false)
@@ -46,11 +44,15 @@ public sealed class LocalDeck
         cards = pairs.SelectMany(card => new[] { card, card }).Concat(singles ?? new string[0]).ToArray();
         LocalDecks.ValidateFabled(cards);
     }
-    internal LocalDeck(string name, string hero, string[] cardIds)
+    internal LocalDeck(string name, string hero, string[] cardIds) : this(name, hero, cardIds, false) { }
+    private LocalDeck(string name, string hero, string[] cardIds, bool dungeon)
     {
-        Id = "custom"; Name = name; Hero = hero; Opponent = "Custom deck"; Strategy = "Custom deck";
+        Id = dungeon ? "dungeon" : "custom"; Name = name; Hero = hero;
+        Opponent = dungeon ? "Dungeon expedition" : "Custom deck";
+        Strategy = dungeon ? "Dungeon expedition" : "Custom deck";
         Style = DeckStyle.Value; Source = null; cards = cardIds.ToArray();
-        LocalDecks.ValidateFabled(cards);
+        DungeonDeck = dungeon;
+        if (!dungeon) LocalDecks.ValidateFabled(cards);
     }
     public List<EngineCard> Build()
     {
