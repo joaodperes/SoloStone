@@ -24,7 +24,8 @@ static partial class Program
             var queue = new Queue<int>(); queue.Enqueue(node.Id);
             while (queue.Count > 0)
             {
-                var current = one.Rooms.Single(r => r.Id == queue.Dequeue());
+                int currentId = queue.Dequeue();
+                var current = one.Rooms.Single(r => r.Id == currentId);
                 foreach (int next in current.Exits)
                     if (visited.Add(next)) queue.Enqueue(next);
             }
