@@ -1,0 +1,559 @@
+# Extra client bindings for the V1 startup check: what the sites installer/SoloStone.Launcher.Tests/BindingScan.cs cannot resolve from the IL really reach. Format and checks: see BindingScan.ReadExtra.
+
+# BlockingDiagnostics.Describe
+site BlockingDiagnostics.Describe | Field | (unknown type) # diagnostic: only logs, a missing member degrades to null
+site BlockingDiagnostics.Describe | Method | (unknown type) # diagnostic: only logs, a missing member degrades to null
+site BlockingDiagnostics.Describe | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null
+
+# BlockingDiagnostics.Read
+site BlockingDiagnostics.Read | Field | (unknown type) # diagnostic: only logs, a missing member degrades to null
+site BlockingDiagnostics.Read | Method | (unknown type) # diagnostic: only logs, a missing member degrades to null
+site BlockingDiagnostics.Read | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null
+
+# ClientBridge.HumanChoicePresentation
+row F ChoiceCardMgr m_friendlyChoicesShown # BlockingDiagnostics.Get on a typed ChoiceCardMgr: whether the friendly choice cards are shown
+site ClientBridge.HumanChoicePresentation | Property | ChoiceCardMgr.m_friendlyChoicesShown (not on this type) # row above; a miss reads as shown
+
+# ClientBridge.Initialize
+row M PrefabInstanceLoadTracker InstantiatePrefab # GetMethods().Single(name == InstantiatePrefab && 5 parameters): board load hook; a miss leaves a failed board load unretried
+row E PackOpeningDirector NewHighlightsReadyImpl # mass pack opening page iterator, transpiled by NativeUIProbe.MassPageMoveNext
+row M CollectionDeck CountCardsByStatus # NativeUIProbe.Hook with a Nullable<FormatType> parameter list, spelled differently by the scanner
+row M GameSaveDataManager Request # NativeUIProbe.Hook with a List<GameSaveKeyId> and delegate parameter list, spelled differently by the scanner
+row M Network SetFavoritePet # NativeCosmetics.Hook with int, bool?, bool? parameters, spelled differently by the scanner
+row M Network SetFavoritePetVariant # NativeCosmetics.Hook with int, bool?, bool? parameters, spelled differently by the scanner
+site ClientBridge.Initialize | Enumerate | PrefabInstanceLoadTracker.(members chosen at run time) # rows above cover the board-load Single(...) lookup, the mass-page iterator reached through NativeUIProbe.MassPageMoveNext, and Hook calls whose generic parameter lists the scanner spells differently than the client
+site ClientBridge.Initialize | Method | CollectionDeck.CountCardsByStatus (not on this type) # rows above cover the board-load Single(...) lookup, the mass-page iterator reached through NativeUIProbe.MassPageMoveNext, and Hook calls whose generic parameter lists the scanner spells differently than the client
+site ClientBridge.Initialize | Method | GameSaveDataManager.Request (not on this type) # rows above cover the board-load Single(...) lookup, the mass-page iterator reached through NativeUIProbe.MassPageMoveNext, and Hook calls whose generic parameter lists the scanner spells differently than the client
+site ClientBridge.Initialize | Method | Network.SetFavoritePet (not on this type) # rows above cover the board-load Single(...) lookup, the mass-page iterator reached through NativeUIProbe.MassPageMoveNext, and Hook calls whose generic parameter lists the scanner spells differently than the client
+site ClientBridge.Initialize | Method | Network.SetFavoritePetVariant (not on this type) # rows above cover the board-load Single(...) lookup, the mass-page iterator reached through NativeUIProbe.MassPageMoveNext, and Hook calls whose generic parameter lists the scanner spells differently than the client
+site ClientBridge.Initialize | MoveNext | (unknown iterator) # rows above cover the board-load Single(...) lookup, the mass-page iterator reached through NativeUIProbe.MassPageMoveNext, and Hook calls whose generic parameter lists the scanner spells differently than the client
+site ClientBridge.Initialize | Patch | (target not known from the IL) # rows above cover the board-load Single(...) lookup, the mass-page iterator reached through NativeUIProbe.MassPageMoveNext, and Hook calls whose generic parameter lists the scanner spells differently than the client
+
+# ClientBridge.PatchAuraRemoval
+site ClientBridge.PatchAuraRemoval | Method | (unknown type) # engine reflection on SabberStoneCore (hash-pinned, not the client): Aura.RemoveInternal
+
+# ClientBridge.PatchCopyTask
+site ClientBridge.PatchCopyTask | Method | (unknown type) # engine reflection on SabberStoneCore (hash-pinned, not the client): SummonCopyTask and TransformCopyTask Process
+
+# ClientBridge.RetryBoardLoad
+row M PrefabInstanceLoadTracker InstantiatePrefab # GetMethods().Single(name == InstantiatePrefab && 5 parameters): board load hook; a miss leaves a failed board load unretried
+site ClientBridge.RetryBoardLoad | Enumerate | PrefabInstanceLoadTracker.(members chosen at run time) # InstantiatePrefab with 5 parameters, row above; board fallback
+
+# CopyTransportBridge.Begin
+site CopyTransportBridge.Begin | Property | (unknown type) # engine reflection on SabberStoneCore (hash-pinned, not the client)
+
+# FairBotState..cctor
+site FairBotState..cctor | Method | (unknown type) # engine reflection on SabberStoneCore (hash-pinned, not the client)
+
+# FireFxScene.Read
+
+# LaneMute.ResolveAudio
+site LaneMute.ResolveAudio | Property | (unknown type) # UnityEngine.AudioModule by name (not in references/game, so no row can be validated); lane-only mute tool that reports its own failure through ReportFailure
+
+# MatchRecorder..cctor
+site MatchRecorder..cctor | Method | (unknown type) # engine reflection on SabberStoneCore (hash-pinned, not the client)
+
+# NativeAchievementStep+<Values>d__97.MoveNext
+site NativeAchievementStep+<Values>d__97.MoveNext | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementStep.CaptionReady
+site NativeAchievementStep.CaptionReady | Field | UnityEngine.Component.m_Hidden (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast caption readiness, UberText is outside references/game)
+site NativeAchievementStep.CaptionReady | Property | UnityEngine.Component.Text (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast caption readiness, UberText is outside references/game)
+site NativeAchievementStep.CaptionReady | Property | UnityEngine.Component.TextAlpha (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast caption readiness, UberText is outside references/game)
+
+# NativeAchievementStep.CaptionRenderer
+site NativeAchievementStep.CaptionRenderer | Field | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.CaptionRenderer | Field | UnityEngine.Component.m_UberTextRenderToTexture (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.CaptionRenderer | Field | UnityEngine.Component.m_UberTextRendering (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.CaptionRenderer | Method | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.CaptionRenderer | Property | UnityEngine.Component.RenderToTexture (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementStep.InspectOwnedSubtree
+site NativeAchievementStep.InspectOwnedSubtree | Field | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.InspectOwnedSubtree | Field | UnityEngine.Component.m_spellStateMap (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.InspectOwnedSubtree | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.InspectOwnedSubtree | Property | UnityEngine.Component.ActiveStateName (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.InspectOwnedSubtree | Property | UnityEngine.Component.Fsm (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.InspectOwnedSubtree | Property | UnityEngine.Component.FsmName (not on this type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementStep.InspectPlayMaker
+site NativeAchievementStep.InspectPlayMaker | Field | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+site NativeAchievementStep.InspectPlayMaker | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementStep.ObserveSound
+site NativeAchievementStep.ObserveSound | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementStep.SerializedAudioFields
+site NativeAchievementStep.SerializedAudioFields | Enumerate | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementStep.SerializedValue
+site NativeAchievementStep.SerializedValue | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementStep.SoundArgument
+site NativeAchievementStep.SoundArgument | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (achievement toast sound and render diagnostics, try/catch and null-safe)
+
+# NativeAchievementToast.Initialize
+row M SpellStateAudioSource Play # achievement toast sound attribution, foreach over {Play, PlayNow}
+row M SpellStateAudioSource PlayNow # achievement toast sound attribution, foreach over {Play, PlayNow}
+row M Hearthstone.UI.PlaySoundClipStateAction Run # state sound attribution prefix/finalizer
+row M Hearthstone.UI.PlaySoundClipStateAction HandleReady # state sound attribution prefix/finalizer
+row M SoundManager Play # sound observer (4-parameter overload, AudioSource types are outside references/game)
+row M SoundManager PlayClip # sound observer
+row M SoundManager LoadAndPlayClip # sound observer: GetMethods().Single(name == LoadAndPlayClip && 2 parameters)
+site NativeAchievementToast.Initialize | Enumerate | SoundManager.(members chosen at run time) # rows above: foreach array of audio hooks and the SoundManager Single(...) lookup; the later sound ones are try-wrapped diagnostics
+site NativeAchievementToast.Initialize | Patch | (target not known from the IL) # rows above: foreach array of audio hooks and the SoundManager Single(...) lookup; the later sound ones are try-wrapped diagnostics
+
+# NativeBigCardWatchdog.Initialize
+row M HistoryManager PlayBigCardCounteredEffects # big-card counter watchdog patch target
+site NativeBigCardWatchdog.Initialize | Enumerate | HistoryManager.(members chosen at run time) # finds the lambda of PlayBigCardCounteredEffects by shape, because a patch can renumber it; a miss turns this watchdog off and blocks nothing
+row F HistoryManager m_currentBigCard # big-card counter watchdog binding
+row M Spell RemoveStateFinishedCallback # found by a loop over Spell.GetMethods(); signature checked at run time
+row M Actor GetSpell # big-card counter watchdog binding
+site NativeBigCardWatchdog.Initialize | Enumerate | Spell.(members chosen at run time) # rows above cover the loop over Spell.GetMethods(); callbackType.GetMethod(Invoke) is a delegate's own Invoke, not a client member. A miss silently disables the watchdog
+site NativeBigCardWatchdog.Initialize | Method | (unknown type) # rows above cover the loop over Spell.GetMethods(); callbackType.GetMethod(Invoke) is a delegate's own Invoke, not a client member. A miss silently disables the watchdog
+
+# NativeBigCardWatchdog.ResolveAdmissionBindings
+row M HistoryManager RunFinishedCallbackAndDestroyBigCard # ReflectionBindings table row (the scanner reads every table row as a field)
+row M HistoryManager CutoffBigCardTransformEffects # ReflectionBindings table row
+row F HistoryManager m_pendingBigCardEntry # ReflectionBindings table row
+row F HistoryManager+BigCardEntry m_finishedCallback # ReflectionBindings table row
+row F HistoryManager m_showingBigCard # ReflectionBindings table row
+site NativeBigCardWatchdog.ResolveAdmissionBindings | Field | HistoryManager.RunFinishedCallbackAndDestroyBigCard (not on this type) # the ReflectionBindings string table of the big-card watchdog, rows above; a miss disables the watchdog
+
+# NativeCosmeticCheck+<>c__DisplayClass28_0`1.<Asset>b__1
+
+# NativeCosmeticCheck+<Asset>d__28`1.MoveNext
+
+# NativeCosmeticCheck+<CheckPet>d__33.MoveNext
+
+# NativeCrafting.Prefix
+row M CraftingManager GetCardValue # Prefix(...) with a byref parameter list the scanner cannot read: CraftingManager.GetCardValue(string, premium, CardValueDbfRecord&)
+site NativeCrafting.Prefix | Method | (unknown type) # the rows above cover the one call that passes MakeByRefType parameters; the other Prefix calls are plain typeof and name literals the scanner reads
+
+# NativeFxTelemetry.InstallHooks
+row P Network+HistSubSpellStart SpellPrefabGUID # SubSpellInstance.SubSpellStartTask.FieldType.GetProperty; FX journal
+row P Network+HistSubSpellStart SourceEntityID # SubSpellInstance.SubSpellStartTask.FieldType.GetProperty; FX journal
+site NativeFxTelemetry.InstallHooks | Property | (unknown type) # FieldType.GetProperty on SubSpellStartTask (Network+HistSubSpellStart); a miss lands in failed[] and disables FX telemetry
+
+# NativeGuideCards.CancelQueued
+site NativeGuideCards.CancelQueued | Method | (unknown type) # reflection on DialogManager's BCL queue (Count, Dequeue, Enqueue); m_dialogRequests itself is a compiled lookup, so it is a row already
+site NativeGuideCards.CancelQueued | Property | (unknown type) # reflection on DialogManager's BCL queue (Count, Dequeue, Enqueue); m_dialogRequests itself is a compiled lookup, so it is a row already
+
+# NativeHelpUI.SetHelpWidth
+site NativeHelpUI.SetHelpWidth | Method | (unknown type) # UberText Width/UpdateNow on a runtime-typed text; UberText is outside references/game; help popup layout only, null-safe
+site NativeHelpUI.SetHelpWidth | Property | (unknown type) # UberText Width/UpdateNow on a runtime-typed text; UberText is outside references/game; help popup layout only, null-safe
+
+# NativeHelpUI.WidenHelpText
+site NativeHelpUI.WidenHelpText | Property | (unknown type) # UberText Width/UpdateNow on a runtime-typed text; UberText is outside references/game; help popup layout only, null-safe
+
+# NativeHeroSkinAudit+<>c__DisplayClass5_1.<Read>b__1
+
+# NativeHeroSkinAudit.Walk
+
+# NativeHiddenEntries.Initialize
+row F BnetBar FriendButtonMesh # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F BnetBar SkipTutorialButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F BnetBar m_battlegroundsGuide # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F BnetBar m_currencyFrames # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F BnetBar m_friendButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F BnetBar m_tutorialSkipButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F BnetBar m_tutorialSkipPopup # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_ArenaButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_BattleGroundsButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_GameModesButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_QuestLogButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_StoreButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_journalButtonWidget # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_luckyDrawButtonController # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_newPlayerModeBanner # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_prtbButtonWidget # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_ribbonButtons # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_setRotationButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_setRotationDisk # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_spjEntryButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F Box m_tutorialPreview # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F BoxProductBanner m_boxProductBannerWidgetInstance # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F DeckPickerTrayDisplay m_replayableTutorial # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_concedeButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_downloadManagerButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_endGameButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_leaveButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_loginButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_restartButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_signUpButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_skipNprButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_skipTutorial # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F GameMenu m_switchAccountButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F OptionsMenu m_languageGroup # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F OptionsMenu m_miscellaneousButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F OptionsMenu m_privacyButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F OptionsMenu m_spectatorOpenJoinCheckbox # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F OptionsMenu m_switchAccountButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F RibbonButtonsUI m_prtbButtonWidget # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row F RibbonButtonsUI m_prtbRibbon # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BattlegroundsGuideButton OnTrayEvent # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BattlegroundsGuideButton StartGuideTutorial # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BnetBar OnFriendButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BnetBar OnSkipTutorialButtonClicked # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BnetBar Start # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BnetBar Update # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BnetBar UpdateLayout # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box EnableStoreButtonGO # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box FireButtonPressEvent # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box InitializeTutorialPreviewController # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnArenaButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnBattleGroundsButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnLuckyDrawButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnModesButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnPRTBButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnSetRotationButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnStoreButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box OnTavernBrawlButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box PlayBattlegroundsMode # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box ShowBattlegroundsPreviewVideo # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box ShowGameModesButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box ShowTraditionalPreviewVideo # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box Start # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box StartBattlegroundsTutorial # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box StartTraditionalTutorial # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box UpdateBoxButtons # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box UpdateNonBoxUIEvents # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box UpdateRibbonUI # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box UpdateState # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box UpdateUI # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box UpdateUIEvents # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Box UpdateUIState # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BoxProductBanner OnWidgetEvent # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BoxProductBanner Start # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BoxProductBanner UnfurlBanner # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M BoxProductBanner UnfurlPayload # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M CurrencyFrame AllowRecharge # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M CurrencyFrame Bind # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M CurrencyFrame OnAttemptRecharge # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M CurrencyFrame Show # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M DeckPickerTrayDisplay SetReplayableTutorialActive # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu Awake # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu ConcedeButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu DownloadManagerPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu LayoutMenu # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu LeaveButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu LoginButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu LogoutButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu OnSignUpPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu OnSkipNprButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu OnSkipTutorialButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu RestartButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu Show # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameMenu ShowLoginTooltipIfNeeded # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M GameUtils ReplayTraditionalTutorial # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Hearthstone.Progression.JournalButton Awake # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Hearthstone.Progression.JournalButton OnReady # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Hearthstone.Progression.JournalButton ShowJournal # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Hub HandleAreanaButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Hub HandleBaconButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Hub HandleGameModesButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M Hub OnBoxButtonPressed # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M LuckyDrawButton OnEnable # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M LuckyDrawButton SetButtonEnabledAndVisible # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M LuckyDrawButton ShowLuckyDraw # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M LuckyDrawButtonController Show # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M MiscellaneousMenu OnCreditsButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M MiscellaneousMenu OnRestorePurchasesButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu Awake # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu LoadMiscellaneousMenu # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu LoadPrivacyMenu # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu OnChangeLanguageConfirmationResponse # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu OnMiscellaneousButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu OnNewLanguage # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu OnPrivacyButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu OnSwitchAccountButtonReleased # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu Show # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu ToggleSpectatorOpenJoin # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu UpdateOtherUI # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M OptionsMenu UpdateUI # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M PRTBButton GoToTavernBrawl # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M PRTBButton ShowInternal # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M PRTBButton Start # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M ReplayableTutorialPopup Awake # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M ReplayableTutorialPopup HandleEvent # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M SPJEntryButton Awake # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M SPJEntryButton ShowButton # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M SPJEntryButton ShowSpj # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M StoreButton OnEnable # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M StoreButton UpdateState # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+row M StoreManager StartGeneralTransaction # NativeHiddenEntries string table (hides retail UI); a miss only warns and leaves the retail control showing
+site NativeHiddenEntries.Initialize | Field | (unknown type) # rows below are the NativeHiddenEntries string tables (Targets field chains, Handlers, RefreshHooks, routes); generated from the source and validated here
+
+# NativeHiddenEntries.ResolveMethod
+site NativeHiddenEntries.ResolveMethod | Method | (unknown type) # same string tables as NativeHiddenEntries.Initialize
+
+# NativeHomeUI+<DrawerText>d__24.MoveNext
+site NativeHomeUI+<DrawerText>d__24.MoveNext | Property | (unknown type) # TMPro.TMP_Text and UnityEngine.TextMesh found by name in any loaded assembly (optional, not client types); Journal label scan, null-safe
+
+# NativeHomeUI.FitFanModesText
+site NativeHomeUI.FitFanModesText | Property | UnityEngine.Component.Width (not on this type) # UberText Width on a button label; UberText is outside references/game; home drawer label fit only
+
+# NativeNpcPresence.Request
+row M AssetLoader InstantiatePrefab # GetMethods().Single(name == InstantiatePrefab && 4 parameters): enemy emote handler load
+row M GameEntity EnemyEmoteHandlerDoneLoadingCallback # placement callback bound by name
+site NativeNpcPresence.Request | Enumerate | (unknown type) # rows above: the loader Single(...); AssetReference op_Implicit is outside references/game. A miss logs request-failed and the opponent has no emote handler
+site NativeNpcPresence.Request | Method | (unknown type) # rows above: the loader Single(...); AssetReference op_Implicit is outside references/game. A miss logs request-failed and the opponent has no emote handler
+
+# NativeProfileMenu.Header
+site NativeProfileMenu.Header | Property | (unknown type) # UberText.Text on ButtonListMenuDef.m_headerText (a compiled row); UberText is outside references/game; save-picker title text only
+
+# NativeResultsUI.BeforeAwake
+site NativeResultsUI.BeforeAwake | Property | (unknown type) # UberText.Text on EndGameScreen.m_continueText (UberText is outside references/game); the continue text is hidden anyway
+
+# NativeResultsUI.Initialize
+row M NetCache RegisterScreenEndOfGame # blocked while a local results screen is up (LocalResultsFlow.BlockNetCacheRequest)
+row M NetCache RequestNetCacheObject # blocked while a local results screen is up (LocalResultsFlow.BlockNetCacheRequest)
+row M NetCache NetCacheReload_Internal # blocked while a local results screen is up (LocalResultsFlow.BlockNetCacheRequest)
+site NativeResultsUI.Initialize | Enumerate | (unknown type) # rows above are the NetCache methods that are blocked; the loop also patches every Claim/Ack/Show/Request method of AchievementManager, RewardTrackManager, QuestManager and NetCache plus filtered FixedRewardsMgr methods with an observe-only prefix, a name filter with no fixed target list
+site NativeResultsUI.Initialize | Patch | (target not known from the IL) # rows above are the NetCache methods that are blocked; the loop also patches every Claim/Ack/Show/Request method of AchievementManager, RewardTrackManager, QuestManager and NetCache plus filtered FixedRewardsMgr methods with an observe-only prefix, a name filter with no fixed target list
+
+# NativeResultsUI.SendFsmEvent
+site NativeResultsUI.SendFsmEvent | Method | UnityEngine.MonoBehaviour.SendEvent (not on this type) # PlayMakerFSM.SendEvent by name, PlayMakerFSM is outside references/game so no row can be validated; sends Death to retire the two-scoop in the local results flow, GAMEPLAY-ADJACENT: reported
+
+# NativeResultsUI.StartRank
+site NativeResultsUI.StartRank | Method | (unknown type) # NativeRewardUI.LoadRaw lookups (rows under NativeRewardUI.LoadRaw)
+
+# NativeRewardUI.BeginAnimation
+row M AssetLoader LoadGameObject # GetMethods().Single(name == LoadGameObject && 5 parameters): reward and rank prefab load; a miss falls back to the saved-rewards popup
+site NativeRewardUI.BeginAnimation | Enumerate | (unknown type) # rows above: the loader Single(...); AssetReference op_Implicit and the callback delegate are outside references/game
+site NativeRewardUI.BeginAnimation | Method | (unknown type) # rows above: the loader Single(...); AssetReference op_Implicit and the callback delegate are outside references/game
+
+# NativeRewardUI.BoosterActorAvailable
+row M AssetLoader IsRuntimeAssetVariantAvailable # GetMethods().Single(name == IsRuntimeAssetVariantAvailable && 2 parameters): decides whether a booster box actor can be shown
+site NativeRewardUI.BoosterActorAvailable | Enumerate | (unknown type) # row above: the loader Single(...) lookup
+site NativeRewardUI.BoosterActorAvailable | Method | (unknown type) # row above: the loader Single(...) lookup
+
+# NativeRewardUI.CloneDone
+row M Spell ActivateState # extra Done/Rematch buttons play the BIRTH state; a miss only leaves the button without its show animation
+site NativeRewardUI.CloneDone | Enumerate | UnityEngine.Component.(members chosen at run time) # Spell.ActivateState reached through Component.GetType(); row above
+
+# NativeRewardUI.FitLabel
+site NativeRewardUI.FitLabel | Property | UnityEngine.Component.characterSize (not on this type) # TextMesh.characterSize on a button label (UnityEngine text module is outside references/game); label fit only
+
+# NativeRewardUI.LoadRaw
+row M AssetLoader LoadGameObject # GetMethods().Single(name == LoadGameObject && 5 parameters): reward and rank prefab load; a miss falls back to the saved-rewards popup
+site NativeRewardUI.LoadRaw | Enumerate | (unknown type) # rows above: the loader Single(...); AssetReference op_Implicit is outside references/game
+site NativeRewardUI.LoadRaw | Method | (unknown type) # rows above: the loader Single(...); AssetReference op_Implicit is outside references/game
+
+# NativeShop.Hook
+site NativeShop.Hook | Patch | (target not known from the IL) # covered by the NativeShop ReflectionBindings row table, which the scanner reads (ShopRows)
+
+# NativeShop.ResolveBinding
+site NativeShop.ResolveBinding | Ctor | (unknown type) # covered by the NativeShop ReflectionBindings row table, which the scanner reads (ShopRows)
+
+# NativeShopTileArt.Neutral
+site NativeShopTileArt.Neutral | Property | UnityEngine.Sprite.textureRect (not on this type) # Sprite.textureRect is missing from the pinned reference stubs but exists at runtime; the code falls back to Sprite.rect; shop tab icon only
+
+# NativeShopTileArt.StartLoad
+row M AssetLoader LoadAsset # GetMethods().Where(name == LoadAsset).First(...): shop board art, async and sync overloads
+site NativeShopTileArt.StartLoad | Enumerate | AssetLoader.(members chosen at run time) # row above; AssetReference, AssetHandle and the callback delegate are outside references/game; a failure falls back to the stock art
+
+# NativeShopTileArt.Step
+site NativeShopTileArt.Step | Property | (unknown type) # AssetHandle.Asset by name (AssetHandle is outside references/game); shop tile art, a failure falls back to the stock art
+
+# NativeShopTilePrices.PopupMethod
+site NativeShopTilePrices.PopupMethod | Enumerate | (unknown type) # IPopupRoot interface methods found by name on the section's runtime type (CleanupPopupRendering and its pair); shop recipe tile price copies, errors logged once
+
+# NativeSpellWatchdog+<>c.<UpdateGeneral>b__39_5
+site NativeSpellWatchdog+<>c.<UpdateGeneral>b__39_5 | Field | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog+<>c.<UpdateGeneral>b__39_5 | Property | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+
+# NativeSpellWatchdog.AfterAttackLaunched
+site NativeSpellWatchdog.AfterAttackLaunched | Field | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.AfterAttackLaunched | Property | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.AfterAttackLaunched | Property | AttackSpellController.m_attackType (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.AfterAttackLaunched | Property | AttackSpellController.m_sourceAttackSpell (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+
+# NativeSpellWatchdog.AnimationProgress
+site NativeSpellWatchdog.AnimationProgress | Field | (unknown type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Field | UnityEngine.Component.isActiveAndEnabled (not on this type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Field | UnityEngine.Component.layerCount (not on this type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Field | UnityEngine.Component.time (not on this type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Method | UnityEngine.Component.GetCurrentAnimatorStateInfo (not on this type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Property | UnityEngine.Component.isActiveAndEnabled (not on this type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Property | UnityEngine.Component.layerCount (not on this type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.AnimationProgress | Property | UnityEngine.Component.time (not on this type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+
+# NativeSpellWatchdog.Detail
+site NativeSpellWatchdog.Detail | Field | (unknown type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+site NativeSpellWatchdog.Detail | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null (stall report and progress signature: PlayMakerFSM, Animator and PlayableDirector are outside references/game)
+
+# NativeSpellWatchdog.Recover
+row F Spell m_stateFinishedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_finishedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_stateStartedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_spellEventListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_spellReleasedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F AttackSpellController m_sourceAttackSpell # stall watchdog: the attack spell of a stuck controller
+row F AttackSpellController m_attackType # stall watchdog report
+row F Spell m_activeStateType # stall watchdog: is the spell idle
+row F Spell m_fsm # stall watchdog report
+row F PowerTaskList m_pendingTasks # stall watchdog progress signature
+row F PowerTaskList m_zoneChangeList # stall watchdog: cards in the stuck zone change
+row F ZoneChangeList m_dirtyZones # stall watchdog: re-issue lost layout
+row F EventListener`1 m_callback # stall watchdog: listener callbacks owned by the stuck controller
+site NativeSpellWatchdog.Recover | Field | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.Recover | Property | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+
+# NativeSpellWatchdog.Update
+site NativeSpellWatchdog.Update | Field | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.Update | Field | SpellController.m_attackType (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.Update | Property | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.Update | Property | SpellController.m_attackType (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+
+# NativeSpellWatchdog.UpdateGeneral
+row F Spell m_stateFinishedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_finishedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_stateStartedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_spellEventListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F Spell m_spellReleasedListeners # NativeSpellWatchdog.Recover strips this listener list; a miss throws MissingFieldException and recovery fails
+row F AttackSpellController m_sourceAttackSpell # stall watchdog: the attack spell of a stuck controller
+row F AttackSpellController m_attackType # stall watchdog report
+row F Spell m_activeStateType # stall watchdog: is the spell idle
+row F Spell m_fsm # stall watchdog report
+row F PowerTaskList m_pendingTasks # stall watchdog progress signature
+row F PowerTaskList m_zoneChangeList # stall watchdog: cards in the stuck zone change
+row F ZoneChangeList m_dirtyZones # stall watchdog: re-issue lost layout
+row F EventListener`1 m_callback # stall watchdog: listener callbacks owned by the stuck controller
+site NativeSpellWatchdog.UpdateGeneral | Field | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.UpdateGeneral | Field | SpellController.m_sourceAttackSpell (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.UpdateGeneral | Property | (unknown type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.UpdateGeneral | Property | PowerTaskList.m_pendingTasks (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.UpdateGeneral | Property | PowerTaskList.m_zoneChangeList (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.UpdateGeneral | Property | Spell.m_activeStateType (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.UpdateGeneral | Property | Spell.m_fsm (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+site NativeSpellWatchdog.UpdateGeneral | Property | SpellController.m_sourceAttackSpell (not on this type) # stall watchdog, gameplay recovery: BlockingDiagnostics.Get reads on Spell, AttackSpellController, SpellController subclasses, PowerTaskList and ZoneChangeList (rows under NativeSpellWatchdog.Recover and .UpdateGeneral). A miss makes the watchdog observe-only or fail its recovery, never crash
+
+# NativeTestControl.PowersText
+
+# NativeTestControl.ReadView
+row F GameState m_serverBlockingSpells # test-control view of the blocking spells (same field the stall watchdog reads)
+row F GameState m_serverBlockingSpellControllers # test-control view of the blocking controllers
+site ClientBridge.Update | Property | GameState.m_serverBlockingSpellControllers (not on this type) # stall diagnostics (BlockingDiagnostics): read-only, a miss degrades to no detail; rows above
+site ClientBridge.Update | Property | GameState.m_serverBlockingSpells (not on this type) # stall diagnostics (BlockingDiagnostics): read-only, a miss degrades to no detail; rows above
+
+# NativeTurnTimerOption.Initialize
+row M SoundManager Play # GetDeclaredMethods().Single(name == Play && 4 parameters): turn timer sound telemetry postfix
+site NativeTurnTimerOption.Initialize | Enumerate | SoundManager.(members chosen at run time) # row above: the Single(...) lookup
+site NativeTurnTimerOption.Initialize | Patch | (target not known from the IL) # row above: the Single(...) lookup
+
+# NativeUIProbe+<>c__DisplayClass162_0.<CurrentRecipeGuide>b__0
+row F DeckTemplatePicker m_currentSelectedDeck # recipe guide: which template is selected
+site NativeUIProbe+<>c__DisplayClass162_0.<CurrentRecipeGuide>b__0 | Field | (unknown type) # FindCurrentRecipeGuide reads the picker's selected template; recipe guide only
+
+# NativeUIProbe+<MassBoosterOpened>d__373.MoveNext
+row F PackOpeningDirector m_massPackOpeningHighlights # mass pack opening: the widgets must have loaded before the receipt is fed
+row F PackOpeningDirector m_massPackOpeningSummary # mass pack opening: the widgets must have loaded before the receipt is fed
+site NativeUIProbe+<MassBoosterOpened>d__373.MoveNext | Field | (unknown type) # director is a local typed PackOpeningDirector; rows above. A miss fails the pack opening closed
+
+# NativeUIProbe.Batch
+row F NetCache+NetCacheBatchRequest m_requests # cache batch requests are made non-reloading while the probe is active
+row F NetCache+Request m_reload # each request of a batch is set non-reloading; a miss throws in the hook and fails the probe
+site NativeUIProbe.Batch | Field | (unknown type) # __0 is object here; it is the argument of NetCache.NetCacheMakeBatchRequest (row type above); request.GetType() is NetCache's request class (m_reload)
+site NativeUIProbe.Batch | Property | (unknown type) # __0 is object here; it is the argument of NetCache.NetCacheMakeBatchRequest (row type above); request.GetType() is NetCache's request class (m_reload)
+
+# NativeUIProbe.BeforeDone
+site NativeUIProbe.BeforeDone | Field | (unknown type) # reaches ValidateRevealedActors, rows under that site
+
+# NativeUIProbe.BeforeMassDone
+row F PackOpeningDirector m_massPackOpeningSummary # mass pack Done proof reads the summary
+row F MassPackOpeningSummary m_cards # mass pack Done proof compares the shown cards to the receipt
+row F MassPackOpeningSummary m_numPacksOpened # mass pack Done proof compares the pack count
+site NativeUIProbe.BeforeMassDone | Field | (unknown type) # summary is the director's field; rows above, plus ValidateRevealedActors rows. A miss fails the acknowledgement closed
+
+# NativeUIProbe.CreateLocalDraft
+row M CollectionManager OnDeckCreated # Required(typeof(CollectionManager), OnDeckCreated, {DeckHeader, int?}): local deck creation; the scanner spells the nullable differently
+site NativeUIProbe.CreateLocalDraft | Method | CollectionManager.OnDeckCreated (not on this type) # row above
+
+# NativeUIProbe.FeedMassBooster
+row F PackOpeningDirector m_massPackOpeningHighlights # mass pack opening feed check
+row F PackOpeningDirector m_massPackOpeningSummary # mass pack opening feed check
+site NativeUIProbe.FeedMassBooster | Field | (unknown type) # director is a local typed PackOpeningDirector; rows above
+
+# NativeUIProbe.FindCurrentRecipeGuide
+row F DeckTemplatePicker m_currentSelectedDeck # recipe guide: which template is selected
+site NativeUIProbe.FindCurrentRecipeGuide | Field | (unknown type) # the picker is a local typed DeckTemplatePicker; row above
+
+# NativeUIProbe.Hook
+row M Options GetBoolImpl # Hook with a byref parameter list the scanner cannot read
+row M UnopenedPack CanOpenPack # Hook with a byref parameter list the scanner cannot read
+site NativeUIProbe.Hook | Method | (unknown type) # rows above cover the Hook calls that pass MakeByRefType parameters; the other Hook calls are plain typeof and literal arguments
+
+# NativeUIProbe.Initialize
+row M EntityBase GetTag # GetMethods().Single(name == GetTag && 1 parameter of int or GAME_TAG): preview tag hooks
+row M NetCache OnNetCacheObjReceived # NativeUIProjection.ResolvePublisher: the one generic non-public publisher
+row E PackOpeningDirector NewHighlightsReadyImpl # mass pack opening page iterator
+site NativeUIProbe.Initialize | Enumerate | EntityBase.(members chosen at run time) # rows above: EntityBase GetTag Single(...), the NetCache publisher lookup and the mass-page iterator (MassPageMoveNext)
+site NativeUIProbe.Initialize | Enumerate | NetCache.(members chosen at run time) # rows above: EntityBase GetTag Single(...), the NetCache publisher lookup and the mass-page iterator (MassPageMoveNext)
+site NativeUIProbe.Initialize | Patch | (target not known from the IL) # rows above: EntityBase GetTag Single(...), the NetCache publisher lookup and the mass-page iterator (MassPageMoveNext)
+
+# NativeUIProbe.InitializeDeckLimits
+row M DeckTrayDeckListContent CreateTraySections # DeckLimitSites table: transpiler replaces the retail 27-deck literals
+row M DeckTrayDeckListContent RefreshTraySectionPositions # DeckLimitSites table: transpiler replaces the retail 27-deck literals
+row M DeckTrayDeckListContent GetLastUnusedTraySection # DeckLimitSites table: transpiler replaces the retail 27-deck literals
+row M DeckTrayDeckListContent GetLastUsedTraySection # DeckLimitSites table: transpiler replaces the retail 27-deck literals
+row M DeckTrayDeckListContent CanShowNewDeckButton # DeckLimitSites table: transpiler replaces the retail 27-deck literals
+row M CollectionDeckTray OnDeckCountUpdated # DeckLimitSites table: transpiler replaces the retail 27-deck literals
+row E DeckTrayDeckListContent DeleteDeckAnimation # DeckLimitSites table: iterator, MoveNext transpiled
+site NativeUIProbe.InitializeDeckLimits | Patch | (target not known from the IL) # the DeckLimitSites table, rows above (E is the iterator)
+
+# NativeUIProbe.Invoke
+row M CollectionManager OnAchievesLoaded # Invoke(obj, name): offline bootstrap finishes the achieves load
+row M GameSaveDataManager SaveSubkeyToLocalCache # Invoke(obj, name): local preference save
+row M DeckTemplatePicker SelectCustomDeckButton # Invoke(obj, name): recipe picker
+row M DeckTemplatePicker FireOnTemplateDeckChosenEvent # Invoke(obj, name): recipe picker opens the editor
+site NativeUIProbe.Invoke | Method | (unknown type) # Invoke(obj, name) callers: CollectionManager, GameSaveDataManager, DeckTemplatePicker; rows above
+
+# NativeUIProbe.OwnedDeleteConfirmation
+row F DialogManager m_currentDialog # local deck delete confirmation must find the open dialog
+row M CollectionDeckBoxVisual OnDeleteButtonConfirmationResponse # Required(owner.GetType(), ...): the owner is a CollectionDeckBoxVisual or a DeckOptionsMenu
+row M DeckOptionsMenu OnDeleteButtonConfirmationResponse # Required(owner.GetType(), ...): the owner is a CollectionDeckBoxVisual or a DeckOptionsMenu
+site NativeUIProbe.OwnedDeleteConfirmation | Method | (unknown type) # DialogManager.m_currentDialog and the two owner types, rows above
+
+# NativeUIProbe.Service
+row M NetCache Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M LoginManager Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M Options Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M Box Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M AssetLoader Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M EventTimingManager Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M CardBackManager Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M CosmeticCoinManager Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+row M GameSaveDataManager Get # Service(name): the startup list of native services, each needs its static Get(); a miss times out as Missing native services
+site NativeUIProbe.Service | Method | (unknown type) # the required-services list in the bootstrap (TrialCardManager goes through ServiceManager.Get<T>); rows above
+
+# NativeUIProbe.ValidateRevealedActors
+row F PackOpeningDirector m_massPackOpeningHiddenCards # pack reveal proof reads the revealed page actors
+row F PackOpeningDirector m_hiddenCards # pack reveal proof reads the revealed actors
+row F Game.PackOpening.HiddenCards m_cards # pack reveal proof reads the revealed actors
+site NativeUIProbe.ValidateRevealedActors | Field | (unknown type) # Field(director, conditional name) then Field(hidden, m_cards); rows above. A miss fails the pack acknowledgement closed
+
+# ProfileFormKit.Request
+row M AssetLoader LoadGameObject # GetMethods().Single(name == LoadGameObject && 5 parameters): reward and rank prefab load; a miss falls back to the saved-rewards popup
+site ProfileFormKit.Request | Method | (unknown type) # NativeRewardUI.LoadRaw lookups (row under NativeRewardUI.BeginAnimation); a failure leaves the picker on the native planks
+
+# Added after the review: closures and table rows the scanner now follows
+site NativeAchievementStep+<>c__DisplayClass94_0.<SerializedAudioFields>b__1 | Property | (unknown type) # diagnostic: only logs, a missing member degrades to null
+site NativeBigCardWatchdog.ResolveAdmissionBindings | Field | HistoryManager+BigCardEntry.RunFinishedCallbackAndDestroyBigCard (not on this type) # the row table's Method rows read as Field names on the other type; the real rows are listed above
+site NativeShop+<>c__DisplayClass256_1.<.cctor>b__7 | Field | (unknown type) # the lazy resolver of NativeShop.ReflectionBindings, whose rows the scanner reads directly
+site NativeShop+<>c__DisplayClass256_1.<.cctor>b__7 | Method | (unknown type) # the lazy resolver of NativeShop.ReflectionBindings, whose rows the scanner reads directly
+site NativeShop+<>c__DisplayClass256_1.<.cctor>b__7 | Property | (unknown type) # the lazy resolver of NativeShop.ReflectionBindings, whose rows the scanner reads directly
+site NativeUIProbe.BeforeMassRevealAll | Field | (unknown type) # reads the same PackOpeningDirector fields as MassPageCards, rowed under the pack reveal proof
+site NativeUIProbe.MassPageCards | Field | (unknown type) # m_massPackOpeningHiddenCards and HiddenCards.m_cards, rowed under the pack reveal proof
+site NativeBigCardWatchdog.ResolveAdmissionBindings | Field | HistoryManager+BigCardEntry.CutoffBigCardTransformEffects (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+site NativeBigCardWatchdog.ResolveAdmissionBindings | Field | HistoryManager+BigCardEntry.m_pendingBigCardEntry (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+site NativeBigCardWatchdog.ResolveAdmissionBindings | Field | HistoryManager+BigCardEntry.m_showingBigCard (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+site NativeBigCardWatchdog.ResolveAdmissionBindings | Field | HistoryManager.CutoffBigCardTransformEffects (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+site NativeBigCardWatchdog.ResolveAdmissionBindings | Field | HistoryManager.m_finishedCallback (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+site NativeBigCardWatchdog.ResolveBindings | Method | HistoryManager.m_finishedCallback (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+site NativeBigCardWatchdog.ResolveBindings | Method | HistoryManager.m_pendingBigCardEntry (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+site NativeBigCardWatchdog.ResolveBindings | Method | HistoryManager.m_showingBigCard (not on this type) # the row table splits on row[0], and the scan reads both arms; the real field and method rows are listed under NativeBigCardWatchdog above
+
+# Code that tolerates a missing target. It must not block players; each line goes stale if the code stops reading the client.
+skip NativeShopTilePrices.Mirror # cosmetic: copies price text style, and skips any field a client lacks (field != null)
