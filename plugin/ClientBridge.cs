@@ -413,10 +413,17 @@ internal static class ClientBridge
 
     // Every native-side check that can refuse a match: run before Begin, so a refusal never leaves a Pending behind.
     internal static PreparedLocalMatch PrepareLocalMatch(string deck, string opponent, int seed, int stars, LocalDeck player = null,
-        IReadOnlyList<LocalDeckCard> premiumEntries = null)
+        IReadOnlyList<LocalDeckCard> premiumEntries = null, bool dungeon = false)
     {
         EnsureCanStart();
-        NativeUIProjection.ValidateMatchDeckBinding(deck, player);
+        if (dungeon)
+        {
+            // Explicit isolated entry point, never a global bypass of collection ownership.
+            if (player == null || !player.DungeonDeck || LocalDecks.Get(deck).Hero != player.Hero ||
+                !LocalDecks.PlayerHeroes.Contains(player.Hero))
+                throw new InvalidOperationException("Dungeon deck/hero mismatch.");
+        }
+        else NativeUIProjection.ValidateMatchDeckBinding(deck, player);
         var prepared = player == null
             ? new NativeMatch(Send, deck, opponent, seed, stars)
             : new NativeMatch(Send, player, opponent, seed, stars, premiumEntries) { CosmeticDeckId = PersonalDeckId(deck) };
